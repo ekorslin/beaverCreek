@@ -11,9 +11,7 @@ class Book extends Component {
   onClick = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     // event.preventDefault();
-    this.setState({
-      date: event[0],
-    });
+    this.props.history.push("/time")
     console.log(event[0]);
   };
 
