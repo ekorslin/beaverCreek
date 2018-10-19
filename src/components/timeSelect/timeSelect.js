@@ -19,7 +19,7 @@ class Time extends Component {
 
   render() {
     return (
-      <div>
+      <div><br/>
         <h2 className="mbl text-center">Select a Time</h2>
         <button type="button" className="btn btn-outline-dark" onClick={this.onClick} value="0700">7:00 AM</button>
         <button type="button" className="btn btn-outline-dark" onClick={this.onClick} value="0800">8:00 AM</button>
