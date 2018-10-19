@@ -1,0 +1,16 @@
+.form {
+  margin: 20px;
+}
+
+.form input {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-shadow: 2px 2px 8px black;
+  text-align: left;
+}
