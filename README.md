@@ -1,59 +1,29 @@
-# beaverCreek
+# Create React Express App
 
-This is a web application that lets users view and schedule tee off times.
+## About This Boilerplate
 
---- Add Text Here ---
---- Add Text Here ---
---- Add Text Here ---
---- Add Text Here ---
---- Add Text Here ---
+This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
 
---- Include brief GIF of website here ---
+The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
 
-### NPM/Yarn Packages/Dependencies that are Used:
+## Starting the app locally
 
-1. _____
-2. _____
-3. _____
-4. _____
-5. _____
+Start by installing front and backend dependencies. While in this directory, run the following command:
 
-### Deployment
+```
+yarn install
+```
 
-* ***Include deployed Heroku link AND the link to the Github Repository!***
-https://github.com/ekorslin/beaverCreek
+This should install node modules within the server and the client folder.
 
-## Application Breakdown
+After both installations complete, run the following command in your terminal:
 
-* This web application accomplishes the following:
+```
+yarn start
+```
 
-  1. Main Point 1
+Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
 
-     * Subpoint 1 - Text Text Text Text
-     * Subpoint 2 - Text Text Text Text
-     * Subpoint 3 - Text Text Text Text
+## Deployment (Heroku)
 
-     * ***Add additional content here***
-
-  2. Main Point 2
-
-    * Subpoint 1 - Text Text Text Text
-    * Subpoint 2 - Text Text Text Text
-    * Subpoint 3 - Text Text Text Text
-
-    * ***Add additional content here***
-
-  3. Main Point 3
-
-    * Subpoint 1 - Text Text Text Text
-    * Subpoint 2 - Text Text Text Text
-    * Subpoint 3 - Text Text Text Text
-
-    * ***Add additional content here***
-
-### Assistant Links
-
-* ***Modify these as needed***
-* [MongoDB Documentation](https://docs.mongodb.com/manual/)
-* [Mongoose Documentation](http://mongoosejs.com/docs/api.html)
-* [Cheerio Documentation](https://github.com/cheeriojs/cheerio)
+To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
