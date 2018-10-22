@@ -13,7 +13,7 @@ module.exports = function(app) {
             name: req.body.name,
             date: req.body.date,
             time: req.body.time
-        }).then(function(dbTeetime) {
+        }).then(function(dbTeeTime) {
             res.json(dbTeeTime);
         });
     });
