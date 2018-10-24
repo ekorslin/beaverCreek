@@ -10,12 +10,11 @@ class Time extends Component {
   onClick = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     // event.preventDefault();
-    this.setState({
-      date: event,
-    });
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    console.log(event.target.value);
+    this.props.history.push("/form")
+    console.log(event[0]);
   };
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+
 
   render() {
     return (
