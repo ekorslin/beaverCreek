@@ -8113,6 +8113,11 @@ wbuf@^1.1.0, wbuf@^1.7.2:
   dependencies:
     minimalistic-assert "^1.0.0"
 
+weather.js@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/weather.js/-/weather.js-0.1.0.tgz#ed78e2e5968c5b607ffa1b67ca59ffd14e5127b9"
+  integrity sha1-7Xji5ZaMW2B/+htnyln/0U5RJ7k=
+
 webidl-conversions@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
