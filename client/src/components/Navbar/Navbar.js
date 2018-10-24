@@ -9,7 +9,7 @@ const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <Link className="navbar-brand" to="/">
       <FontAwesomeIcon
-        icon="envelope"
+        icon="golf-ball"
         color="#6DB65B"
         size="sm"
       />

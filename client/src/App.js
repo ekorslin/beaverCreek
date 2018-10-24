@@ -8,9 +8,9 @@ import Time from "./components/timeSelect";
 import Home from "./components/home";
 import Form from "./components/form";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope, faKey } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faKey, faGhost, faRing, faFutbol, faBasketballBall, faGolfBall } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faEnvelope, faKey);
+library.add(faEnvelope, faKey, faGhost, faRing, faFutbol, faBasketballBall, faGolfBall);
 
 const App = () => (
  <Router>
