@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
 import Time from "./components/timeSelect";
 import Home from "./components/home";
+import Form from "./components/form";
 
 const App = () => (
  <Router>
@@ -14,6 +15,7 @@ const App = () => (
             <Route exact path="/" component={Home} />
             <Route exact path="/time" component={Time} />
             <Route exact path="/book" component={Book} />
+            <Route exact path="/form" component={Form} />
          </Wrapper>
     </div>
 </Router>
