@@ -2,11 +2,23 @@ import React from "react";
 // import { Link } from "react-router-dom";
 // import { Grid, Nav, NavItem } from 'react-bootstrap';
 import { div, i, h3 } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import '../node_modules/font-awesome/css/font-awesome.min.css';
 import "./Footer.css";
 
 function Footer(/*props*/) {
   return (
     <footer class="navbar-dark fixed-bottom bg-dark" id="footerSection">
+
+      <div>
+        <FontAwesomeIcon
+          icon="envelope"
+          color="#6DB65B"
+          size="sm"
+        />
+        {' '}Username
+      </div>
+
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
