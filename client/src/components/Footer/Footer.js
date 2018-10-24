@@ -6,7 +6,7 @@ import "./Footer.css";
 
 function Footer(/*props*/) {
   return (
-    <footer class="navbar-dark bg-dark" id="footerSection">
+    <footer class="navbar-dark fixed-bottom bg-dark" id="footerSection">
       <div class="container">
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
