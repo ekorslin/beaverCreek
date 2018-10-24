@@ -10,7 +10,7 @@ class Form extends Component {
     event.preventDefault();
  
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    console.log(event.name);
+    console.log(event[0]);
     console.log(event.target.email);
     console.log(event.target.telephone);
     console.log(event.target.numberGolfers);
