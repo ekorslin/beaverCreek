@@ -4,14 +4,16 @@ class Time extends Component {
   // Setting the component's initial state
   state = {
     date: "",
+    time: "",
   };
 
 
   onClick = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     // event.preventDefault();
-    this.props.history.push("/form")
-    console.log(event[0]);
+    this.setState({time: event.target.value});
+    this.props.history.push("/form");
+    console.log(event.target.value);
   };
     // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
 
