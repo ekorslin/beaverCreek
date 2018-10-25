@@ -1,23 +1,88 @@
 import React, { Component } from "react";
+import Modal from 'react-modal';
+import axios from 'axios';
+
+// Custom Styles for the modal technology that shows upon submit
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+Modal.setAppElement('#root');
 
 class Form extends Component {
+
+  constructor() {
+    super();
+
   // Setting the component's initial state
 
-
-
-  onClick = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
- 
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    console.log(event.name);
-    console.log(event.target.email);
-    console.log(event.target.telephone);
-    console.log(event.target.numberGolfers);
-    console.log(event.target.additionalComments);
-    console.log(event.target.cart);
-
+  this.state = {
+    modalIsOpen: false,
+    ariaHideApp: false,
+    name: "",
+    email: "",
+    phone: "",
+    numberGolfers: "",
+    comments: "",
+    cart: ""
   };
+
+  this.openModal = this.openModal.bind(this);
+  this.afterOpenModal = this.afterOpenModal.bind(this);
+  this.closeModal = this.closeModal.bind(this);
+}
+
+openModal(event) {
+  event.preventDefault();
+  this.setState({modalIsOpen: true});
+  this.setState({name: this.refs.name.value});
+  this.setState({email: this.refs.email.value});
+  this.setState({phone: this.refs.telephone.value});
+  this.setState({numberGolfers: this.refs.name.value});
+  this.setState({comments: this.refs.additionalComments.value});
+  this.setState({cart: this.refs.cart.value});
+  console.log("Name: " + this.state.name);
+  var userInfo = {
+    date: "2018-10-25",
+    time: "0900",
+    name: this.refs.name.value,
+    email: this.refs.email.value,
+    phone: this.refs.telephone.value,
+    numberGolfers: this.refs.numberGolfers.value,
+    comments: this.refs.additionalComments.value,
+    cart: this.refs.cart.checked
+  }
+  axios.post('/submit', {
+    TeeTime: userInfo
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+}
+
+
+afterOpenModal() {
+  // references are now sync'd and can be accessed.
+  this.subtitle.style.color = 'black';
+}
+
+closeModal() {
+  this.setState({modalIsOpen: false});
+  this.props.history.push("/")
+
+
+}
 
   render() {
     return (
@@ -29,19 +94,19 @@ class Form extends Component {
         <form>
           <div className="form-group">
             <label>Full Name</label>
-            <input type="text" className="form-control" id="name" aria-describedby="emailHelp" placeholder="Your Full Name"/>
+            <input type="text" className="form-control" name="name" ref="name" placeholder="Your Full Name"/>
           </div>
           <div className="form-group">
             <label>Email Address</label>
-            <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Email Address"/>
+            <input type="email" className="form-control" ref="email" aria-describedby="emailHelp" placeholder="Email Address"/>
           </div>
           <div className="form-group">
             <label>Phone Number</label>
-            <input type="tel" className="form-control" id="telephone" placeholder="Phone Number"/>
+            <input type="tel" className="form-control" ref="telephone" placeholder="Phone Number"/>
           </div>
           <div className="form-group">
             <label>No. of Golfers</label>
-            <select className="form-control" id="numberGolfers">
+            <select className="form-control" ref="numberGolfers">
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -50,20 +115,39 @@ class Form extends Component {
           </div>
           <div className="form-group">
             <label>Anything Additional?</label>
-            <textarea className="form-control" id="additionalComments" rows="3"></textarea>
+            <textarea className="form-control" ref="additionalComments" rows="3"></textarea>
           </div>
           <div className="form-check">
             <label className="form-check-label">
-              <input type="checkbox" id="cart" className="form-check-input"/>
+              <input type="checkbox" ref="cart" className="form-check-input"/>
               Will you Require Cart(s)?
             </label>
           </div><br/>
-          <button type="submit" onClick={this.onClick} className="btn btn-primary">Submit</button>
+          <button type="submit" onClick={this.openModal} className="btn btn-outline-dark">Submit</button>
         </form>
         </div>
         <div className="col-md-4"></div>
         </div>
-        </div>
+
+     <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <img src="logo.png" alt="Logo" size="75%" />
+          <h2 ref={subtitle => this.subtitle = subtitle}>You are booked!</h2>
+          <form>
+            Thank you, {this.state.name}.  We look forward to seeing you on.  ad;lkjads;lfkjad;lfja;sldkjf.
+            <br /><br />
+            <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
+          </form>
+      </Modal>
+
+</div>
+
+      
 
 
   

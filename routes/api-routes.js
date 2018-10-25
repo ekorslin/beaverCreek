@@ -7,12 +7,16 @@ module.exports = function(app) {
         });
     });
 
-    app.post("/api/teetimes", function(req, res) {
-        console.log(req.body);
+    app.post("/submit", function(req, res) {
         db.TeeTime.create({
-            name: req.body.name,
-            date: req.body.date,
-            time: req.body.time
+            date: '2018-10-25',
+            time: '0900',
+            name: req.body.TeeTime.name,
+            email: req.body.TeeTime.email,
+            phone: req.body.TeeTime.phone,
+            numberGolfers: req.body.TeeTime.numberGolfers,
+            comments: req.body.TeeTime.comments,
+            cart: req.body.TeeTime.cart
         }).then(function(dbTeeTime) {
             res.json(dbTeeTime);
         });
