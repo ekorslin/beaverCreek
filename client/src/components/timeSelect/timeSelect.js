@@ -40,7 +40,7 @@ class Time extends Component {
       <div className="col-md-2"></div>
       </div>
 
-      
+
     );
   }};
 
