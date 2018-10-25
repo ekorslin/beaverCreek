@@ -32,7 +32,13 @@ class Time extends Component {
                     <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="0900">9:00 AM</button>
                     <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="1000">10:00 AM</button>
                     <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="1100">11:00 AM</button>
+                    <br></br>
                     <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="1200">12:00 PM</button>
+                    <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="1300">1:00 PM</button>
+                    <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="1400">2:00 PM</button>
+                    <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="1500">3:00 PM</button>
+                    <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="1600">4:00 PM</button>
+
                   </div>
                 </div>
             </div>
@@ -40,7 +46,7 @@ class Time extends Component {
         </div>
       </div>
 
-      
+
     );
   }};
 
