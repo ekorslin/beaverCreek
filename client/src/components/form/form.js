@@ -86,71 +86,78 @@ closeModal() {
 
   render() {
     return (
-      <div><br/>
-        <h2 className="mbl text-center">Complete the Following<br/>to Complete your Booking:</h2><br/>
-        <div className="row">
-        <div className="col-md-4"></div>
-        <div className="col-md-4">
-        <form>
-          <div className="form-group">
-            <label>Full Name</label>
-            <input type="text" className="form-control" name="name" ref="name" placeholder="Your Full Name"/>
+      <div>
+        <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img className="d-block w-100 img-fluid" src="./put.jpg" alt="First slide"/>
+                <div className="carousel-caption d-none d-md-block">
+                  <div><br/>
+                    <h2 className="mbl text-center">Complete the Following<br/>to Complete your Booking:</h2><br/>
+                    <div className="row">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4">
+                    <form>
+                      <div className="form-group">
+                        <label>Full Name</label>
+                        <input type="text" className="form-control" name="name" ref="name" placeholder="Your Full Name"/>
+                      </div>
+                      <div className="form-group">
+                        <label>Email Address</label>
+                        <input type="email" className="form-control" ref="email" aria-describedby="emailHelp" placeholder="Email Address"/>
+                      </div>
+                      <div className="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" className="form-control" ref="telephone" placeholder="Phone Number"/>
+                      </div>
+                      <div className="form-group">
+                        <label>No. of Golfers</label>
+                        <select className="form-control" ref="numberGolfers">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                        </select>
+                      </div>
+                      <div className="form-group">
+                        <label>Anything Additional?</label>
+                        <textarea className="form-control" ref="additionalComments" rows="3"></textarea>
+                      </div>
+                      <div className="form-check">
+                        <label className="form-check-label">
+                          <input type="checkbox" ref="cart" className="form-check-input"/>
+                          Will you Require Cart(s)?
+                        </label>
+                      </div><br/>
+                      <button type="submit" onClick={this.openModal} className="btn btn-outline-dark">Submit</button>
+                    </form>
+                    </div>
+                    <div className="col-md-4"></div>
+                    </div>
+
+                 <Modal
+                      isOpen={this.state.modalIsOpen}
+                      onAfterOpen={this.afterOpenModal}
+                      onRequestClose={this.closeModal}
+                      style={customStyles}
+                      contentLabel="Example Modal"
+                    >
+                      <img src="logo.png" alt="Logo" size="75%" />
+                      <h2 ref={subtitle => this.subtitle = subtitle}>You are booked!</h2>
+                      <form>
+                        Thank you, {this.state.name}.  We look forward to seeing you on.  ad;lkjads;lfkjad;lfja;sldkjf.
+                        <br /><br />
+                        <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
+                      </form>
+                  </Modal>
+
+            </div>
+                </div>
+            </div>
           </div>
-          <div className="form-group">
-            <label>Email Address</label>
-            <input type="email" className="form-control" ref="email" aria-describedby="emailHelp" placeholder="Email Address"/>
-          </div>
-          <div className="form-group">
-            <label>Phone Number</label>
-            <input type="tel" className="form-control" ref="telephone" placeholder="Phone Number"/>
-          </div>
-          <div className="form-group">
-            <label>No. of Golfers</label>
-            <select className="form-control" ref="numberGolfers">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>Anything Additional?</label>
-            <textarea className="form-control" ref="additionalComments" rows="3"></textarea>
-          </div>
-          <div className="form-check">
-            <label className="form-check-label">
-              <input type="checkbox" ref="cart" className="form-check-input"/>
-              Will you Require Cart(s)?
-            </label>
-          </div><br/>
-          <button type="submit" onClick={this.openModal} className="btn btn-outline-dark">Submit</button>
-        </form>
         </div>
-        <div className="col-md-4"></div>
-        </div>
+      </div>
 
-     <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <img src="logo.png" alt="Logo" size="75%" />
-          <h2 ref={subtitle => this.subtitle = subtitle}>You are booked!</h2>
-          <form>
-            Thank you, {this.state.name}.  We look forward to seeing you on.  ad;lkjads;lfkjad;lfja;sldkjf.
-            <br /><br />
-            <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
-          </form>
-      </Modal>
-
-</div>
-
-      
-
-
-  
     );
   }};
 
