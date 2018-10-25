@@ -22,7 +22,7 @@ class Book extends Component {
           <div className="col-md-2"></div>
           <div className="col-md-8"><br/>
             <h2 className="mbl text-center">Select a Day</h2>
-            <ReactWeeklyDayPicker mobilView={window.innerWidth < 100} format={'MM-DD-YYYY'} selectDay={this.onClick} />
+            <ReactWeeklyDayPicker mobilView={window.innerWidth < 100} format={'YYYY-MM-DD'} selectDay={this.onClick} />
           </div>
           <div className="col-md-2"></div>
         </div>
