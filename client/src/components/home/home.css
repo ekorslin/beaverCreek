@@ -15,7 +15,8 @@ h1 {
   text-align: left;
 }
 
-p { 
+p {
   text-shadow: 2px 2px 8px black;
   text-align: left;
+  padding-bottom: 18%;
 }

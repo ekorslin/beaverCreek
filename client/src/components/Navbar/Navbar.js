@@ -1,13 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// Used this as reference for the above fontAwesomeIcon: https://alligator.io/react/font-awesome/
 import "./Navbar.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <Link className="navbar-brand" to="/">
-      BeaverCreek
+      <FontAwesomeIcon
+        icon="golf-ball"
+        color="#6DB65B"
+        size="sm"
+      />
+    {' '}BeaverCreek
     </Link>
+
     <div>
       <ul className="navbar-nav">
         <li
