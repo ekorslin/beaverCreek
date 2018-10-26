@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 
 class Time extends Component {
-  // Setting the component's initial state
-  state = {
-    date: "",
-    time: "",
-  };
 
-  onClick = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    // event.preventDefault();
-    this.setState({time: event.target.value});
+  onClick = (event) => {
+    var time = event.target.value;
     this.props.history.push("/form");
-    console.log(event.target.value);
+    this.props.timeClick(time);
   };
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
 
   render() {
     return (
@@ -28,8 +20,8 @@ class Time extends Component {
                     <div className="row">
                     <div className="col-md-2"></div>
                     <div className="col-md-8">
-                      <h2 className="mbl text-center">Select a Time</h2>
-                      <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="0700">7:00 AM</button>
+                      <h2 className="mbl text-center">Select a Time for {this.props.date}</h2>
+                      <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick.bind(this)} value="0700">7:00 AM</button>
                       <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="0800">8:00 AM</button>
                       <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="0900">9:00 AM</button>
                       <button type="button" className="btn btn-outline-dark text-light" onClick={this.onClick} value="1000">10:00 AM</button>

@@ -9,8 +9,8 @@ module.exports = function(app) {
 
     app.post("/submit", function(req, res) {
         db.TeeTime.create({
-            date: '2018-10-25',
-            time: '0900',
+            date: req.body.TeeTime.date,
+            time: req.body.TeeTime.time,
             name: req.body.TeeTime.name,
             email: req.body.TeeTime.email,
             phone: req.body.TeeTime.phone,
