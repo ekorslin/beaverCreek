@@ -1,6 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// if you want the old fontAwesome icon, replace the img tag under the link in the navbar const with the following:
+
+// <FontAwesomeIcon
+//   icon="golf-ball"
+//   color="#6DB65B"
+//   size="sm"
+// />
+// {' '}BeaverCreek
+
 // Used this as reference for the above fontAwesomeIcon: https://alligator.io/react/font-awesome/
 import "./Navbar.css";
 
@@ -8,12 +18,7 @@ import "./Navbar.css";
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <Link className="navbar-brand" to="/">
-      <FontAwesomeIcon
-        icon="golf-ball"
-        color="#6DB65B"
-        size="sm"
-      />
-    {' '}BeaverCreek
+      <img src="logo.png" alt="Logo" size="10%" />{' '}Beaver Creek
     </Link>
 
     <div>
@@ -64,6 +69,7 @@ const Navbar = props => (
             Search
           </Link>
         </li> */}
+
       </ul>
     </div>
   </nav>
