@@ -3,16 +3,11 @@ import ReactWeeklyDayPicker from "react-weekly-day-picker";
 import "./daySelect.css";
 
 class Book extends Component {
-  // Setting the component's initial state
-  state = {
-    date: "",
-  };
 
-  onClick = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    // event.preventDefault();
+  onClick = (date) => {
+    var dateChosen = date[0];
     this.props.history.push("/time")
-    console.log(event[0]);
+    this.props.click(dateChosen);
   };
 
 
@@ -29,7 +24,7 @@ class Book extends Component {
                     <div className="col-md-2"></div>
                     <div className="col-md-8"><br/>
                       <h2 className="mbl text-center">Select a Day</h2>
-                      <ReactWeeklyDayPicker mobilView={window.innerWidth < 100} format={'YYYY-MM-DD'} selectDay={this.onClick} />
+                      <ReactWeeklyDayPicker mobilView={window.innerWidth < 100} format={'YYYY-MM-DD'} selectDay={this.onClick.bind(this)} />
                     </div>
                     <div className="col-md-2"></div>
                   </div>

@@ -51,8 +51,8 @@ openModal(event) {
   this.setState({cart: this.refs.cart.value});
   console.log("Name: " + this.state.name);
   var userInfo = {
-    date: "2018-10-25",
-    time: "0900",
+    date: this.refs.date.value,
+    time: this.refs.time.value,
     name: this.refs.name.value,
     email: this.refs.email.value,
     phone: this.refs.telephone.value,
@@ -90,11 +90,10 @@ closeModal() {
               <img className="d-block w-100 h-100 img-fluid" src="./put.jpg" alt="First slide"/>
                 <div className="carousel-caption d-none d-md-block">
                   <div><br/>
-                    <div className="row align-items-center">
-                    <div className="col-md-6">
-                      <h2 class="formHeader" className="mbl text-center">Complete the Following<br/>to Complete your Booking:</h2><br/>
-                    </div>
-                    <div className="col-md-6">
+                    <h2 className="mbl text-center" ref="header" value={this.props.date}>Complete the Following<br/>to Complete your Booking for {this.props.date}:</h2><br/>
+                    <div className="row">
+                    <div className="col-md-4"></div>
+                    <div className="col-md-4">
                     <form>
                       <div className="form-group">
                         <label className="text-dark font-weight-bold font-italic">Full Name</label>
@@ -127,7 +126,10 @@ closeModal() {
                           Will you Require Cart(s)?
                         </label>
                       </div><br/>
-                    <button type="submit" onClick={this.openModal} className="btn btn-outline-dark text-light">Submit</button>
+                      <button type="submit" onClick={this.openModal} className="btn btn-outline-dark">Submit</button>
+
+                      <input type="hidden" ref="date" value={this.props.date} />
+                      <input type="hidden" ref="time" value={this.props.time} />
                     </form>
                     </div>
                     <div className="col-md-4"></div>
@@ -143,7 +145,7 @@ closeModal() {
                       <img src="logo.png" alt="Logo" size="75%" />
                       <h2 ref={subtitle => this.subtitle = subtitle}>You are booked!</h2>
                       <form>
-                        Thank you, {this.state.name}.  We look forward to seeing you on: user___selected___date.
+                        Thank you, {this.state.name}.  We look forward to seeing you on {this.props.date}.
                         <br /><br />
                         <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
                       </form>
