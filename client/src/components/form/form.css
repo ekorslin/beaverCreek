@@ -25,11 +25,19 @@ h2 {
 } */
 
 
-.rwdpDayBoxDesktop .rwdp-DayCircle {
-   border: 2px solid yellow;
-   color: red;
 
+
+/* #carouselExampleIndicators {
+    width: 100%;
 }
+.carousel-item img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+} */
+
+
+
 
 /* .carousel-item {
    background-image: url('../../assets/put.jpg');
