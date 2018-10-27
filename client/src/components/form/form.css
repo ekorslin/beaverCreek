@@ -23,3 +23,14 @@ h2 {
   margin-top:10%;
   border-top:10%;
 } */
+
+
+.rwdpDayBoxDesktop .rwdp-DayCircle {
+   border: 2px solid yellow;
+   color: red;
+
+}
+
+/* .carousel-item {
+   background-image: url('../../assets/put.jpg');
+} */
