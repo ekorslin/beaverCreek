@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Modal from 'react-modal';
 import axios from 'axios';
-import "./form.css";
+import "./contact.css";
 
 // Custom Styles for the modal technology that shows upon submit
 const customStyles = {
@@ -17,7 +17,7 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-class Form extends Component {
+class Contact extends Component {
 
   constructor() {
     super();
@@ -30,9 +30,7 @@ class Form extends Component {
     name: "",
     email: "",
     phone: "",
-    numberGolfers: "",
     comments: "",
-    cart: ""
   };
 
   this.openModal = this.openModal.bind(this);
@@ -46,9 +44,7 @@ openModal(event) {
   this.setState({name: this.refs.name.value});
   this.setState({email: this.refs.email.value});
   this.setState({phone: this.refs.telephone.value});
-  this.setState({numberGolfers: this.refs.name.value});
   this.setState({comments: this.refs.additionalComments.value});
-  this.setState({cart: this.refs.cart.value});
   console.log("Name: " + this.state.name);
   var userInfo = {
     date: this.refs.date.value,
@@ -56,9 +52,7 @@ openModal(event) {
     name: this.refs.name.value,
     email: this.refs.email.value,
     phone: this.refs.telephone.value,
-    numberGolfers: this.refs.numberGolfers.value,
     comments: this.refs.additionalComments.value,
-    cart: this.refs.cart.checked
   }
   axios.post('/submit', {
     TeeTime: userInfo
@@ -92,7 +86,7 @@ closeModal() {
                   <div><br/>
                     <div className="row align-items-center">
                       <div class="flex-container">
-                        <h2 class="formHeader" className="mbl text-center" ref="header" value={this.props.date}>Complete the Following<br/>to Finalize your Booking for {this.props.date}:</h2><br/>
+                        <h2 class="formHeader" className="mbl text-center" ref="header">Contact Us</h2><br/>
                       </div>
                       <div className="col-md-6">
 
@@ -110,28 +104,15 @@ closeModal() {
                           <input type="tel" className="form-control" ref="telephone" placeholder="Phone Number"/>
                         </div>
                         <div className="form-group">
-                          <label className="text-dark font-weight-bold font-italic">Number of Golfers</label>
-                          <select className="form-control" ref="numberGolfers">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                          </select>
-                        </div>
-                        <div className="form-group">
-                          <label className="text-dark font-weight-bold font-italic">Anything Additional?</label>
+                          <label className="text-dark font-weight-bold font-italic">Description of Issue:</label>
                           <textarea className="form-control" ref="additionalComments" rows="3"></textarea>
-                        </div>
-                        <div className="form-check">
-                          <label className="form-check-label">
-                            <input type="checkbox" ref="cart" className="form-check-input"/>
-                            Will you Require Cart(s)?
-                          </label>
                         </div><br/>
+
                       <button type="submit" onClick={this.openModal} className="btn btn-outline-dark text-light">Submit</button>
 
                         <input type="hidden" ref="date" value={this.props.date} />
                         <input type="hidden" ref="time" value={this.props.time} />
+
                       </form>
                       </div>
                       <div className="col-md-4"></div>
@@ -146,9 +127,9 @@ closeModal() {
                       contentLabel="Example Modal"
                     >
                       <img src="logo.png" alt="Logo" size="75%" />
-                      <h2 ref={subtitle => this.subtitle = subtitle}>You are booked!</h2>
+                      <h2 ref={subtitle => this.subtitle = subtitle}>Ticket Created!</h2>
                       <form>
-                        Thank you, {this.state.name}.  We look forward to seeing you on {this.props.date}.
+                        Thank you, {this.state.name}. Your issue has been raised to our team.
                         <br /><br />
                         <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
                       </form>
@@ -162,4 +143,4 @@ closeModal() {
   }};
 
 
-export default Form;
+export default Contact;

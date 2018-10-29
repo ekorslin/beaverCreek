@@ -16,6 +16,14 @@ h2 {
 }
 
 .rwdpDayBoxDesktop .rwdp-DayCircle {
-   border: 2px solid yellow;
-   color: red;
+   /* border: 2px solid blue; */
+   color: white;
+}
+
+.rwdp-DayCircle .rwdp-DayCircle-unavailable .rwdp-flex-box .rwdp-flex-column .rwdp-justify-content-center .rwdp-align-items-center {
+
+}
+
+.rwdp-DayCircle-unavailable-text .rwdp-DayCircle {
+  color: white;
 }
