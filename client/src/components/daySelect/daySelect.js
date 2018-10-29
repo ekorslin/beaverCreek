@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactWeeklyDayPicker from "react-weekly-day-picker";
+
 import "./daySelect.css";
 
 class Book extends Component {
@@ -9,7 +10,6 @@ class Book extends Component {
     this.props.history.push("/time")
     this.props.click(dateChosen);
   };
-
 
   render() {
     return (
@@ -37,6 +37,5 @@ class Book extends Component {
     );
   }
 }
-
 
 export default Book;
