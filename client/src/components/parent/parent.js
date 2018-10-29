@@ -4,6 +4,7 @@ import Home from "../home";
 import Book from "../daySelect";
 import Time from "../timeSelect";
 import Form from "../form";
+import Admin from "../admin";
 import "./parent.css";
 
 class Parent extends Component {
@@ -11,9 +12,17 @@ class Parent extends Component {
     super(props);
   this.state = {
     date: "",
-    time: ""
+    time: "",
+    email: "",
+    password: ""
   };
 }
+
+  login(credentials) {
+    this.setState({
+      email: credentials
+    })
+  };
 
   onUpdate(dateChosen) {
     this.setState({
@@ -29,7 +38,8 @@ class Parent extends Component {
 
   componentDidUpdate() {
     console.log(this.state.date);
-    console.log(this.state.time)
+    console.log(this.state.time);
+    console.log(this.state.email)
   };
 
 
@@ -41,6 +51,7 @@ class Parent extends Component {
             <Route exact path="/book" render={(props) => <Book {...props} click={this.onUpdate.bind(this)} />} />
             <Route exact path="/time" render={(props) => <Time {...props} date={this.state.date} timeClick={this.onTimeUpdate.bind(this)} />} />
             <Route exact path="/form" render={(props) => <Form {...props} date={this.state.date} time={this.state.time}/>} />
+            <Route exact path="/admin" component={Admin} />
       </div>
     );
   }
