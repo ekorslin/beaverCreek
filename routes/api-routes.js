@@ -1,8 +1,9 @@
 const db = require("../models");
 
 module.exports = function(app) {
-    app.get("/api/teetimes", function(req, res) {
-        db.TeeTime.findAll({}).then(function(dbTeeTime) {
+    app.post("/adminScreen", function(req, res) {
+        console.log(req.body.adminSelected.date);
+        db.TeeTime.findAll({where: { date: req.body.adminSelected.date}, order: ['time']}).then(function(dbTeeTime) {
             res.json(dbTeeTime);
         });
     });
@@ -23,15 +24,16 @@ module.exports = function(app) {
     });
     // DELETE route for deleting teetimes. We can get the id of the teetime we want to delete from
     // req.params.id
-    app.delete("/api/teetimes/:id", function(req, res) {
+    app.post("/adminScreen/delete", function(req, res) {
+        console.log(req.body)
         db.TeeTime.destroy({
             where: {
-                id: req.params.id
+                id: req.body.adminSelected.deleteId
             }
         }).then(function(dbTeeTime) {
             res.json(dbTeeTime);
-        });
-    });
+        });})
+    
     // PUT route for updating teetimes. We can get the updated teetimes from req.body
     app.put("/api/teetimes", function(req, res) {
         db.TeeTime.update({
