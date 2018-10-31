@@ -60,9 +60,9 @@ const Navbar = props => (
         </li>
       </ul>
     </div>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/admin">Admin Login</a>
+        <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+                <a className="nav-link" href="/admin">Admin Login</a>
             </li>
         </ul>
   </nav>
