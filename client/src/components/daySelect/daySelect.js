@@ -24,12 +24,12 @@ class Book extends Component {
               <div className="carousel-caption d-none d-md-block">
                 <div>
                   <div className="row">
-                    <div className="col-md-2"></div>
-                    <div className="col-md-8"><br/>
+                    <div className="col-md-1"></div>
+                    <div className="col-md-10"><br/>
                       <h2 className="mbl text-center">Select a Day</h2>
                       <ReactWeeklyDayPicker mobilView={window.innerWidth < 100} format={'YYYY-MM-DD'} selectDay={this.onClick.bind(this)} />
                     </div>
-                    <div className="col-md-2"></div>
+                    <div className="col-md-1"></div>
                   </div>
                 </div>
               </div>
