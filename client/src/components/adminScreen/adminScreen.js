@@ -12,21 +12,8 @@ class AdminScreen extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    console.log(date);
-    var date = {
-      date: this.refs.date.value,
-    } 
-    axios.post('/adminScreen', {
-      adminSelected: date
-    })
-    .then(function componentDidUpdate(response) {
-      console.log(response.data);
-          this.setState({
-              data: response.data, loading: false
-          })}.bind(this))
-  .catch(function (error) {
-      console.log(error);
-  })}
+    this.getData();
+  }
   
   onDelete = (event) => {
     event.preventDefault();
@@ -37,15 +24,29 @@ class AdminScreen extends Component {
     axios.post('/adminScreen/delete', {
       adminSelected: deleteId
     })
-    .then(function componentDidUpdate(response) {
+    .then((response) => {
       alert("Your entry has been successfully deleted!");
-      console.log(response.data);
-          this.setState({
-              data: response.data, loading: false
-          })}.bind(this))
+      this.getData();
+    })
   .catch(function (error) {
       console.log(error);
   })};
+
+  getData () {
+      var date = {
+        date: this.refs.date.value,
+      } 
+      axios.post('/adminScreen', {
+        adminSelected: date
+      })
+      .then(function componentDidUpdate(response) {
+        console.log(response.data);
+            this.setState({
+                data: response.data, loading: false
+            })}.bind(this))
+    .catch(function (error) {
+        console.log(error);
+    })}
 
   render() {
     return (
