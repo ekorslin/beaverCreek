@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Modal from 'react-modal';
 import axios from 'axios';
 import "./form.css";
+import AddToCalendar from 'react-add-to-calendar';
+
+
 
 // Custom Styles for the modal technology that shows upon submit
 const customStyles = {
@@ -14,6 +17,7 @@ const customStyles = {
     transform             : 'translate(-50%, -50%)'
   }
 };
+
 
 Modal.setAppElement('#root');
 
@@ -32,13 +36,21 @@ class Form extends Component {
     phone: "",
     numberGolfers: "",
     comments: "",
-    cart: ""
+    cart: "",
+    event: {
+      title: 'Golf Outing',
+      description: 'Enjoying a round of golf at Beaver Creek Golf Club.',
+      location: 'Capron, IL',
+      startTime: '2018-09-16T20:45:00-04:00',
+      endTime: "2018-09-16T21:45:00-04:00"
+    }
   };
 
   this.openModal = this.openModal.bind(this);
   this.afterOpenModal = this.afterOpenModal.bind(this);
   this.closeModal = this.closeModal.bind(this);
 }
+
 
 openModal(event) {
   event.preventDefault();
@@ -49,6 +61,13 @@ openModal(event) {
   this.setState({numberGolfers: this.refs.name.value});
   this.setState({comments: this.refs.additionalComments.value});
   this.setState({cart: this.refs.cart.value});
+  let year = this.refs.date.value.slice(0,4);
+  let month = this.refs.date.value.slice(6,8);
+  let day = this.refs.date.value.slice(10,12);
+
+  let hour = this.refs.time.value.slice(0,2);
+  let minute = this.refs.time.value.slice(3,5);
+  this.setState({ event: { startTime: this.refs.date.value +"T"+hour+":"+minute+":00-4:00" } })
   console.log("Name: " + this.state.name);
   var userInfo = {
     date: this.refs.date.value,
@@ -69,6 +88,7 @@ openModal(event) {
   .catch(function (error) {
     console.log(error);
   });
+ 
 }
 
 afterOpenModal() {
@@ -80,6 +100,8 @@ closeModal() {
   this.setState({modalIsOpen: false});
   this.props.history.push("/")
 }
+
+
 
   render() {
     return (
@@ -150,7 +172,9 @@ closeModal() {
                       <form>
                         Thank you, {this.state.name}.  We look forward to seeing you on {this.props.date}.
                         <br /><br />
+                        
                         <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
+                        <AddToCalendar event={this.state.event}/>
                       </form>
                   </Modal>
                 </div>
