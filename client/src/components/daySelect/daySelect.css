@@ -27,3 +27,32 @@ h2 {
 .rwdp-DayCircle-unavailable-text .rwdp-DayCircle {
   color: white;
 }
+
+
+
+/* Code for having the weather widget scroll from left to right */
+
+/* .weatherwidget-io {
+    position: relative;
+
+    -webkit-animation: myfirst 20s linear 1s infinite;
+    animation: myfirst 20s linear 1s infinite;
+}
+
+
+@-webkit-keyframes myfirst {
+    0%   {left:0%;}
+    25%  {left:25%;}
+    50%  {left:50%;}
+    75%  {left:75%;}
+    100% {left:100%;}
+}
+
+
+@keyframes myfirst {
+  0%   {left:0%;}
+  25%  {left:25%;}
+  50%  {left:50%;}
+  75%  {left:75%;}
+  100% {left:100%;}
+} */

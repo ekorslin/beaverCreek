@@ -15,7 +15,7 @@ class Book extends Component {
     return (
       <div>
         <div>
-          <a class="weatherwidget-io" href="https://forecast7.com/en/42d40n88d74/capron/?unit=us" data-label_1="CAPRON" data-label_2="WEATHER" data-theme="original" >CAPRON WEATHER</a>
+          <a class="weatherwidget-io" href="https://forecast7.com/en/42d40n88d74/capron/?unit=us" data-label_1="CAPRON" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="sky" >CAPRON WEATHER</a>
         </div>
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
