@@ -1,20 +1,22 @@
 const db = require("../models");
-const isAuthenticated = require("../config/isAuthenticated.js");
+// const isAuthenticated = require("../config/isAuthenticated.js");
 
 // Requiring our models and passport as we've configured it
 var passport = require("../config/passport");
 
 module.exports = function(app) {
-    app.post("/adminScreen", isAuthenticated, function(req, res) {
+    // app.post("/adminScreen", isAuthenticated, function(req, res) {
+    app.post("/adminScreen", function(req, res) {
         console.log(req.body.adminSelected.date);
         db.TeeTime.findAll({where: { date: req.body.adminSelected.date}, order: ['time']}).then(function(dbTeeTime) {
             res.json(dbTeeTime);
         });
     });
 
-    app.get("/success", isAuthenticated, function(req, res) {
+    // app.get("/success", isAuthenticated, function(req, res) {
+    app.get("/success", function(req, res) {
         console.log("You have successfully logged in!");
-        res.json("YOU HAVE SUCCESSED");
+        res.json("SUCCESS IS YOURS");
     });
 
 
