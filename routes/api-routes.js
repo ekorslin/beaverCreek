@@ -1,14 +1,22 @@
 const db = require("../models");
+// const isAuthenticated = require("../config/isAuthenticated.js");
 
 // Requiring our models and passport as we've configured it
 var passport = require("../config/passport");
 
 module.exports = function(app) {
+    // app.post("/adminScreen", isAuthenticated, function(req, res) {
     app.post("/adminScreen", function(req, res) {
         console.log(req.body.adminSelected.date);
         db.TeeTime.findAll({where: { date: req.body.adminSelected.date}, order: ['time']}).then(function(dbTeeTime) {
             res.json(dbTeeTime);
         });
+    });
+
+    // app.get("/success", isAuthenticated, function(req, res) {
+    app.get("/success", function(req, res) {
+        console.log("You have successfully logged in!");
+        res.json("SUCCESS IS YOURS");
     });
 
 
@@ -29,7 +37,9 @@ module.exports = function(app) {
     console.log(req.body);
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName
     }).then(function() {
       res.redirect(307, "/api/login");
     }).catch(function(err) {
@@ -42,7 +52,8 @@ module.exports = function(app) {
   // Route for logging user out
   app.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+    // res.redirect("/");
+    res.sendStatus(200);
   });
 
   // Route for getting some data about our user to be used client side
@@ -87,7 +98,7 @@ module.exports = function(app) {
         }).then(function(dbTeeTime) {
             res.json(dbTeeTime);
         });})
-    
+
     // PUT route for updating teetimes. We can get the updated teetimes from req.body
     app.put("/api/teetimes", function(req, res) {
         db.TeeTime.update({
