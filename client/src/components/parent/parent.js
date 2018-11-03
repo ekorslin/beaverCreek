@@ -6,6 +6,7 @@ import Time from "../timeSelect";
 import AdminScreen from "../adminScreen";
 import Form from "../form";
 import Admin from "../admin";
+import AdminSignup from "../admin-signup";
 import "./parent.css";
 
 class Parent extends Component {
@@ -54,6 +55,7 @@ class Parent extends Component {
             <Route exact path="/form" render={(props) => <Form {...props} date={this.state.date} time={this.state.time}/>} />
             <Route exact path="/admin" component={Admin} />
             <Route exact path="/adminScreen" component={AdminScreen} />
+            <Route exact path="/signup" component={AdminSignup} />
       </div>
     );
   }

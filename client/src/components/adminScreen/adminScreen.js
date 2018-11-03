@@ -10,6 +10,19 @@ class AdminScreen extends Component {
       loading: true
     }}
 
+logout = (event) => {
+  event.preventDefault();
+  axios.post('/logout', {
+  })
+  .then((response) => {
+    alert("You are now successfully logged out.");
+    window.location.href="/"
+  })
+.catch(function (error) {
+    console.log(error);
+})};
+
+
   onSubmit = (event) => {
     event.preventDefault();
     this.getData();
@@ -25,7 +38,6 @@ class AdminScreen extends Component {
       adminSelected: deleteId
     })
     .then((response) => {
-      // alert("Your entry has been successfully deleted!");
       this.getData();
     })
   .catch(function (error) {
@@ -83,7 +95,9 @@ class AdminScreen extends Component {
         </tbody>
         </table>
         <br/>
-    </div>
+        <button type="submit" onClick={this.logout.bind(this)} className="btn btn-outline-dark center">Logout</button>
+
+      </div>
     );
   }}
 
