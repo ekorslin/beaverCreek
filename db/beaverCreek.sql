@@ -5,6 +5,7 @@ CREATE DATABASE beaverCreekdb;
 
 use beaverCreekdb;
 
+
 CREATE TABLE IF NOT EXISTS TeeTimes (
     id INT AUTO_INCREMENT,
     createdAt DATETIME,
@@ -20,6 +21,24 @@ CREATE TABLE IF NOT EXISTS TeeTimes (
 	PRIMARY KEY (id)
 );
 
-select * from teeTime;
+
+CREATE TABLE IF NOT EXISTS Users (
+    id INT AUTO_INCREMENT,
+    createdAt DATETIME,
+    updatedAt DATETIME,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+	firstName VARCHAR(255) NOT NULL,
+    lastName VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+);
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+-- use beaverCreekdb;
+
+-- SELECT * FROM TeeTimes;
+
+use beaverCreekdb;
+
+SELECT * FROM Users;

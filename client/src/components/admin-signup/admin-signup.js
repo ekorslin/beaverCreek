@@ -2,19 +2,25 @@ import React, { Component } from "react";
 import axios from 'axios';
 import "./stylesheets/style.css";
 
-class Admin extends Component {
+class AdminSignup extends Component {
 
-  login = (event) => {
+  signUp = (event) => {
     event.preventDefault()
-    axios.post("/login", {
+    var User = {
+      firstName: this.refs.firstName.value,
+      lastName: this.refs.lastName.value,
       email: this.refs.email.value,
       password: this.refs.password.value,
+    }
+    axios.post("/signup", {
+    User: User
   })
   .then(function (res) {
-    window.location.href="/adminScreen";
+    alert("Thank you.  You are now registered.")
+    window.location.href="/admin";
+    // res.redirect(res, "/admin");
   })
   .catch(function (error) {
-    alert("Sorry!  Invalid email & password combination.  Please try again.")
     console.log(error);
   });
   }
@@ -25,8 +31,16 @@ class Admin extends Component {
     <div className="row">
     <div className="col-md-4"></div>
     <div className="col-md-4">
-      <h2>Administrator Login</h2>
+      <h2>Administrator Registration</h2>
       <form className="login">
+        <div className="form-group">
+          <label for="exampleInputEmail1">First Name</label>
+          <input type="text" className="form-control" ref="firstName" placeholder="FIrst Name"/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Last Name</label>
+          <input type="text" className="form-control" ref="lastName" placeholder="Last Name"/>
+        </div>
         <div className="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" className="form-control" ref="email" placeholder="Email"/>
@@ -35,10 +49,10 @@ class Admin extends Component {
           <label for="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" ref="password" placeholder="Password"/>
         </div>
-        <button type="submit" className="btn btn-outline-dark" onClick={this.login.bind(this)}>Login</button>
+        <button type="submit" className="btn btn-outline-dark" onClick={this.signUp.bind(this)}>Register</button>
       </form>
       <br />
-      <p>Or sign up <a href="/signup">here</a></p>
+      <p>Or return to login <a href="/admin">here</a></p>
     </div>
     </div>
     <div className="col-md-4"></div>
@@ -48,6 +62,6 @@ class Admin extends Component {
 }
 
 
-export default Admin;
+export default AdminSignup;
 
 
