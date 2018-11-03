@@ -6569,6 +6569,21 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-add-to-calendar-hoc@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-add-to-calendar-hoc/-/react-add-to-calendar-hoc-1.0.7.tgz#564f86a835129c7e62cd921d34ada04c9bea311a"
+  integrity sha512-nJArRX32qfwrWAxVKBwRKwmGmQQDBeoynpvvXvYk5wO8+wvB824Vvzma0ArhQo2jAmN2xaFrJ2ivpElhC1DI8w==
+  dependencies:
+    core-js "^2.5.7"
+    prop-types "^15.6.2"
+
+react-add-to-calendar@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/react-add-to-calendar/-/react-add-to-calendar-0.1.5.tgz#ab077fe98ca0f178a5a3b70a3590d4b630c0f275"
+  integrity sha512-DI+q3vvHCiYhxgh+83sg9UrPD9sdyBYcuY77UMcfX3y1MUPMW+f/w/6EG0MZg7B07vLQ4R6nxqk6wtMtcXOicA==
+  optionalDependencies:
+    moment "^2.18.1"
+
 react-bootstrap@^0.32.4:
   version "0.32.4"
   resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-0.32.4.tgz#8efc4cbfc4807215d75b7639bee0d324c8d740d1"

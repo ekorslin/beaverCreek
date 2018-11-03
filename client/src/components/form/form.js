@@ -3,6 +3,9 @@ import Modal from 'react-modal';
 // import axios from 'axios';
 import axios from "../../api/axios";
 import "./form.css";
+import AddToCalendar from 'react-add-to-calendar';
+
+
 
 // Custom Styles for the modal technology that shows upon submit
 const customStyles = {
@@ -16,6 +19,7 @@ const customStyles = {
   }
 };
 
+
 Modal.setAppElement('#root');
 
 class Form extends Component {
@@ -24,7 +28,6 @@ class Form extends Component {
     super();
 
   // Setting the component's initial state
-
   this.state = {
     modalIsOpen: false,
     ariaHideApp: false,
@@ -33,7 +36,14 @@ class Form extends Component {
     phone: "",
     numberGolfers: "",
     comments: "",
-    cart: ""
+    cart: "",
+    event: {
+      title: 'Golf Outing',
+      description: 'Enjoying a round of golf at Beaver Creek Golf Club.',
+      location: 'Capron, IL',
+      startTime: "",
+      endTime: ""
+    }
   };
 
   this.openModal = this.openModal.bind(this);
@@ -41,16 +51,35 @@ class Form extends Component {
   this.closeModal = this.closeModal.bind(this);
 }
 
-openModal(event) {
-  event.preventDefault();
-  this.setState({modalIsOpen: true});
-  this.setState({name: this.refs.name.value});
-  this.setState({email: this.refs.email.value});
-  this.setState({phone: this.refs.telephone.value});
-  this.setState({numberGolfers: this.refs.name.value});
-  this.setState({comments: this.refs.additionalComments.value});
-  this.setState({cart: this.refs.cart.value});
-  console.log("Name: " + this.state.name);
+
+openModal(e) {
+  e.preventDefault();
+  let startHour = this.refs.time.value.slice(0,2)
+  let startHourInteger = parseInt(startHour) + 6;
+  
+
+  let endHourInteger = parseInt(startHour) + 10;
+  let endHour = endHourInteger.toString();
+  let event = {...this.state.event}
+  console.log(event);
+  event.startTime = this.refs.date.value+"T"+startHourInteger+":00:00";
+  event.endTime = this.refs.date.value+"T"+endHour+":00:00";
+  console.log(event);
+  this.setState({
+    modalIsOpen: true,
+    name: this.refs.name.value,
+    email: this.refs.email.value,
+    phone: this.refs.telephone.value,
+    numberGolfers: this.refs.name.value,
+    comments: this.refs.additionalComments.value,
+    cart: this.refs.cart.value,
+    event,
+  }, () => {
+    console.log(startHour, endHour);
+    console.log(this.refs.date.value+"T"+startHour+":00:00-4:00");
+    console.log(this.state.event);
+  });
+  
   var userInfo = {
     date: this.refs.date.value,
     time: this.refs.time.value,
@@ -61,6 +90,7 @@ openModal(event) {
     comments: this.refs.additionalComments.value,
     cart: this.refs.cart.checked
   }
+  
   axios.post('/submit', {
     TeeTime: userInfo
   })
@@ -70,6 +100,7 @@ openModal(event) {
   .catch(function (error) {
     console.log(error);
   });
+ 
 }
 
 afterOpenModal() {
@@ -81,6 +112,8 @@ closeModal() {
   this.setState({modalIsOpen: false});
   this.props.history.push("/")
 }
+
+
 
   render() {
     return (
@@ -151,7 +184,9 @@ closeModal() {
                       <form>
                         Thank you, {this.state.name}.  We look forward to seeing you on {this.props.date}.
                         <br /><br />
+                        
                         <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
+                        <AddToCalendar event={this.state.event}/>
                       </form>
                   </Modal>
                 </div>
