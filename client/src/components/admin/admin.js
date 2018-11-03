@@ -1,25 +1,27 @@
 import React, { Component } from "react";
-import axios from 'axios';
+// import axios from 'axios';
+import axios from "../../api/axios";
 import "./stylesheets/style.css";
 
 class Admin extends Component {
 
-  login(event) {
+  login = (event) => {
     event.preventDefault()
-    var credentials = {
+    axios.post("/login", {
       email: this.refs.email.value,
       password: this.refs.password.value,
+    })
+    .then(res => {
+      // window.location.href="/adminScreen";
+      sessionStorage.setItem("jwt", res.data.token);
+      this.props.history.push("/adminScreen");
+      console.log(res.data.token);
+    })
+    .catch(error => {
+      alert("Sorry!  Invalid email & password combination.  Please try again.")
+      console.log(error);
+    });
     }
-    axios.post('/login', {
-    credentials: credentials
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-  }
 
   render() {
     return (
@@ -40,7 +42,7 @@ class Admin extends Component {
         <button type="submit" className="btn btn-outline-dark" onClick={this.login.bind(this)}>Login</button>
       </form>
       <br />
-      <p>Or sign up <a href="/">here</a></p>
+      <p>Or sign up <a href="/signup">here</a></p>
     </div>
     </div>
     <div className="col-md-4"></div>
@@ -51,5 +53,3 @@ class Admin extends Component {
 
 
 export default Admin;
-
-

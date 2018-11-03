@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactWeeklyDayPicker from "react-weekly-day-picker";
-
 import "./daySelect.css";
 
 class Book extends Component {

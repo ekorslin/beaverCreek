@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from 'axios';
+// import axios from 'axios';
+import axios from "../../api/axios";
 import "./stylesheets/style.css";
 
 class AdminScreen extends Component {
@@ -10,22 +11,35 @@ class AdminScreen extends Component {
       loading: true
     }}
 
+logout = (event) => {
+  event.preventDefault();
+  axios.post('/logout', {})
+    .then((response) => {
+      alert("You are now successfully logged out.");
+      sessionStorage.setItem('jwt', '');
+      this.props.history.push("/");
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+  };
+
+
   onSubmit = (event) => {
     event.preventDefault();
     this.getData();
   }
-  
+
   onDelete = (event) => {
     event.preventDefault();
     console.log(event.target.value);
     var deleteId = {
       deleteId: event.target.value,
-    } 
+    }
     axios.post('/adminScreen/delete', {
       adminSelected: deleteId
     })
     .then((response) => {
-      alert("Your entry has been successfully deleted!");
       this.getData();
     })
   .catch(function (error) {
@@ -35,11 +49,11 @@ class AdminScreen extends Component {
   getData () {
       var date = {
         date: this.refs.date.value,
-      } 
+      }
       axios.post('/adminScreen', {
         adminSelected: date
       })
-      .then(function componentDidUpdate(response) {
+      .then(function (response) {
         console.log(response.data);
             this.setState({
                 data: response.data, loading: false
@@ -49,6 +63,7 @@ class AdminScreen extends Component {
     })}
 
   render() {
+    if (!sessionStorage.jwt) this.props.history.push('/admin');
     return (
     <div><br/>
         <h2 className="mbl text-center">Select a Day<br/>to Manage Tee-Times</h2>
@@ -83,11 +98,11 @@ class AdminScreen extends Component {
         </tbody>
         </table>
         <br/>
-    </div>
+        <button type="submit" onClick={this.logout.bind(this)} className="btn btn-outline-dark center">Logout</button>
+        <br />
+      </div>
     );
   }}
 
 
 export default AdminScreen;
-
-  

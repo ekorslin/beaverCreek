@@ -10,10 +10,12 @@
     "react-add-to-calendar": "^0.1.5",
     "react-add-to-calendar-hoc": "^1.0.7",
     "react-bootstrap": "^0.32.4",
+    "react-cookie": "^3.0.4",
     "react-dom": "^16.0.0",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.0.14",
     "react-weekly-day-picker": "^1.0.3",
+    "universal-cookie": "^3.0.4",
     "weather.js": "^0.1.0"
   },
   "scripts": {
