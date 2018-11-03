@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from 'axios';
+// import axios from 'axios';
+import axios from "../../api/axios";
 import "./stylesheets/style.css";
 
 class AdminSignup extends Component {
@@ -63,5 +64,3 @@ class AdminSignup extends Component {
 
 
 export default AdminSignup;
-
-

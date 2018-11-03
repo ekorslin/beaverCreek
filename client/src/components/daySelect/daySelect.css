@@ -29,6 +29,33 @@ h2 {
 }
 
 
+div {
+    background-color: lightgreen;
+}
+
+@media only screen and (max-width: 991px) {
+    div {
+        background-color: lightblue;
+    }
+}
+
+@media only screen and (max-width: 758px) {
+    div {
+        background-color: red;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    div {
+        background-color: yellow;
+    }
+}
+
+@media only screen and (max-width: 281px) {
+    div {
+        background-color: grey;
+    }
+}
 
 /* Code for having the weather widget scroll from left to right */
 
