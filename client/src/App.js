@@ -15,7 +15,7 @@ const App = () => (
      <div>
         <Navbar />
          <Wrapper>
-            <Parent />
+                <Parent />
          </Wrapper>
         <Footer />
     </div>

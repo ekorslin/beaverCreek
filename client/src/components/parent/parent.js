@@ -6,6 +6,7 @@ import Time from "../timeSelect";
 import AdminScreen from "../adminScreen";
 import Form from "../form";
 import Admin from "../admin";
+import Cookies from 'universal-cookie';
 import AdminSignup from "../admin-signup";
 import "./parent.css";
 
@@ -47,6 +48,8 @@ class Parent extends Component {
 
 
   render() {
+    const cookies = new Cookies();
+    console.log(!!cookies.get("connect.sid"));
     return (
       <div>
             <Route exact path="/" component={Home} />

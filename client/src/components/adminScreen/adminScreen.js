@@ -99,7 +99,7 @@ logout = (event) => {
         </table>
         <br/>
         <button type="submit" onClick={this.logout.bind(this)} className="btn btn-outline-dark center">Logout</button>
-
+        <br />
       </div>
     );
   }}

@@ -1,5 +1,5 @@
 const db = require("../models");
-// const isAuthenticated = require("../config/isAuthenticated.js");
+const isAuthenticated = require("../config/middleware/isAuthenticated.js");
 // Requiring our models and passport as we've configured it
 const passport = require("../config/passport");
 const jwt = require("jsonwebtoken");
