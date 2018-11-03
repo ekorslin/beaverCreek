@@ -27,7 +27,6 @@ class Form extends Component {
     super();
 
   // Setting the component's initial state
-
   this.state = {
     modalIsOpen: false,
     ariaHideApp: false,
@@ -41,8 +40,8 @@ class Form extends Component {
       title: 'Golf Outing',
       description: 'Enjoying a round of golf at Beaver Creek Golf Club.',
       location: 'Capron, IL',
-      startTime: '2018-09-16T20:45:00-04:00',
-      endTime: "2018-09-16T21:45:00-04:00"
+      startTime: "",
+      endTime: ""
     }
   };
 
@@ -52,23 +51,34 @@ class Form extends Component {
 }
 
 
-openModal(event) {
-  event.preventDefault();
-  this.setState({modalIsOpen: true});
-  this.setState({name: this.refs.name.value});
-  this.setState({email: this.refs.email.value});
-  this.setState({phone: this.refs.telephone.value});
-  this.setState({numberGolfers: this.refs.name.value});
-  this.setState({comments: this.refs.additionalComments.value});
-  this.setState({cart: this.refs.cart.value});
-  let year = this.refs.date.value.slice(0,4);
-  let month = this.refs.date.value.slice(6,8);
-  let day = this.refs.date.value.slice(10,12);
+openModal(e) {
+  e.preventDefault();
+  let startHour = this.refs.time.value.slice(0,2)
+  let startHourInteger = parseInt(startHour) + 6;
+  
 
-  let hour = this.refs.time.value.slice(0,2);
-  let minute = this.refs.time.value.slice(3,5);
-  this.setState({ event: { startTime: this.refs.date.value +"T"+hour+":"+minute+":00-4:00" } })
-  console.log("Name: " + this.state.name);
+  let endHourInteger = parseInt(startHour) + 10;
+  let endHour = endHourInteger.toString();
+  let event = {...this.state.event}
+  console.log(event);
+  event.startTime = this.refs.date.value+"T"+startHourInteger+":00:00";
+  event.endTime = this.refs.date.value+"T"+endHour+":00:00";
+  console.log(event);
+  this.setState({
+    modalIsOpen: true,
+    name: this.refs.name.value,
+    email: this.refs.email.value,
+    phone: this.refs.telephone.value,
+    numberGolfers: this.refs.name.value,
+    comments: this.refs.additionalComments.value,
+    cart: this.refs.cart.value,
+    event,
+  }, () => {
+    console.log(startHour, endHour);
+    console.log(this.refs.date.value+"T"+startHour+":00:00-4:00");
+    console.log(this.state.event);
+  });
+  
   var userInfo = {
     date: this.refs.date.value,
     time: this.refs.time.value,
@@ -79,6 +89,7 @@ openModal(event) {
     comments: this.refs.additionalComments.value,
     cart: this.refs.cart.checked
   }
+  
   axios.post('/submit', {
     TeeTime: userInfo
   })
