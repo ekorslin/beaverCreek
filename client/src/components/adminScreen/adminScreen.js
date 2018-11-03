@@ -16,7 +16,7 @@ logout = (event) => {
   })
   .then((response) => {
     alert("You are now successfully logged out.");
-    window.location.href="/"
+    window.location.href="/admin"
   })
 .catch(function (error) {
     console.log(error);
@@ -96,7 +96,7 @@ logout = (event) => {
         </table>
         <br/>
         <button type="submit" onClick={this.logout.bind(this)} className="btn btn-outline-dark center">Logout</button>
-
+        <br />
       </div>
     );
   }}
