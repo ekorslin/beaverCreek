@@ -1,12 +1,12 @@
 const db = require("../models");
-// const isAuthenticated = require("../config/isAuthenticated.js");
+const isAuthenticated = require("../config/middleware/isAuthenticated.js");
 // Requiring our models and passport as we've configured it
 var passport = require("../config/passport");
 
 module.exports = function(app) {
 
-    // app.post("/adminScreen", isAuthenticated, function(req, res) {
-    app.post("/adminScreen", function(req, res) {
+    app.post("/adminScreen", isAuthenticated, function(req, res) {
+    // app.post("/adminScreen", function(req, res) {
         console.log(req.body.adminSelected.date);
         db.TeeTime.findAll({where: { date: req.body.adminSelected.date}, order: ['time']}).then(function(dbTeeTime) {
             res.json(dbTeeTime);
