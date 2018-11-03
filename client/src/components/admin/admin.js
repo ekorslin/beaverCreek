@@ -9,15 +9,18 @@ class Admin extends Component {
     axios.post("/login", {
       email: this.refs.email.value,
       password: this.refs.password.value,
-  })
-  .then(function (res) {
-    window.location.href="/adminScreen";
-  })
-  .catch(function (error) {
-    alert("Sorry!  Invalid email & password combination.  Please try again.")
-    console.log(error);
-  });
-  }
+    })
+    .then(res => {
+      // window.location.href="/adminScreen";
+      sessionStorage.setItem("jwt", res.data.token);
+      this.props.history.push("/adminScreen");
+      console.log(res.data.token);
+    })
+    .catch(error => {
+      alert("Sorry!  Invalid email & password combination.  Please try again.")
+      console.log(error);
+    });
+    }
 
   render() {
     return (
@@ -49,5 +52,3 @@ class Admin extends Component {
 
 
 export default Admin;
-
-

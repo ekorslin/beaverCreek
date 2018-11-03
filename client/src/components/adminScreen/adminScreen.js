@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import axios from 'axios';
+// import axios from 'axios';
+import axios from "../../api/axios";
 import "./stylesheets/style.css";
 
 class AdminScreen extends Component {
@@ -12,15 +13,16 @@ class AdminScreen extends Component {
 
 logout = (event) => {
   event.preventDefault();
-  axios.post('/logout', {
-  })
-  .then((response) => {
-    alert("You are now successfully logged out.");
-    window.location.href="/"
-  })
-.catch(function (error) {
-    console.log(error);
-})};
+  axios.post('/logout', {})
+    .then((response) => {
+      alert("You are now successfully logged out.");
+      sessionStorage.setItem('jwt', '');
+      this.props.history.push("/");
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
+  };
 
 
   onSubmit = (event) => {
@@ -51,7 +53,7 @@ logout = (event) => {
       axios.post('/adminScreen', {
         adminSelected: date
       })
-      .then(function componentDidUpdate(response) {
+      .then(function (response) {
         console.log(response.data);
             this.setState({
                 data: response.data, loading: false
@@ -61,6 +63,7 @@ logout = (event) => {
     })}
 
   render() {
+    if (!sessionStorage.jwt) this.props.history.push('/admin');
     return (
     <div><br/>
         <h2 className="mbl text-center">Select a Day<br/>to Manage Tee-Times</h2>

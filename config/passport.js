@@ -1,5 +1,9 @@
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
+const passportJWT = require('passport-jwt');
+const JWTStrategy = passportJWT.Strategy;
+const ExtractJWT = passportJWT.ExtractJwt;
+require('dotenv').config();
 
 var db = require("../models");
 
@@ -31,6 +35,22 @@ passport.use(new LocalStrategy(
       // If none of the above, return the user
       return done(null, dbUser);
     });
+  }
+));
+
+passport.use(new JWTStrategy(
+  {
+    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+    secretOrKey: process.env.JWT_SECRET
+  },
+  function (jwtPayload, cb) {
+    return db.User.findById(jwtPayload)
+      .then(user => {
+        return cb(null, user)
+      })
+      .catch(err => {
+        return cb(err)
+      });
   }
 ));
 
