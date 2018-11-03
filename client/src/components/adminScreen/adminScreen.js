@@ -14,18 +14,18 @@ class AdminScreen extends Component {
     event.preventDefault();
     this.getData();
   }
-  
+
   onDelete = (event) => {
     event.preventDefault();
     console.log(event.target.value);
     var deleteId = {
       deleteId: event.target.value,
-    } 
+    }
     axios.post('/adminScreen/delete', {
       adminSelected: deleteId
     })
     .then((response) => {
-      alert("Your entry has been successfully deleted!");
+      // alert("Your entry has been successfully deleted!");
       this.getData();
     })
   .catch(function (error) {
@@ -35,7 +35,7 @@ class AdminScreen extends Component {
   getData () {
       var date = {
         date: this.refs.date.value,
-      } 
+      }
       axios.post('/adminScreen', {
         adminSelected: date
       })
@@ -89,5 +89,3 @@ class AdminScreen extends Component {
 
 
 export default AdminScreen;
-
-  
