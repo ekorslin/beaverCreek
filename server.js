@@ -10,6 +10,15 @@ const db = require("./models");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+// if (process.env.JAWSDB_URL) {
+//   connection = mysql.createConnection(process.env.JAWSDB_URL);
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'password',
+//     database: 'beaverCreekdb'
+//   });
+// };
+
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
