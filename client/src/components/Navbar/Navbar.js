@@ -1,13 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// if you want the old fontAwesome icon, replace the img tag under the link in the navbar const with the following:
+
+// <FontAwesomeIcon
+//   icon="golf-ball"
+//   color="#6DB65B"
+//   size="sm"
+// />
+// {' '}BeaverCreek
+
+// Used this as reference for the above fontAwesomeIcon: https://alligator.io/react/font-awesome/
 import "./Navbar.css";
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 const Navbar = props => (
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <Link className="navbar-brand" to="/">
-      BeaverCreek
+      <img src="logo.png" alt="Logo" size="10%" />{' '}Beaver Creek
     </Link>
+
     <div>
       <ul className="navbar-nav">
         <li
@@ -45,19 +58,13 @@ const Navbar = props => (
             Contact Us
           </Link>
         </li>
-        {/* <li
-          className={
-            window.location.pathname === "/search"
-              ? "nav-item active"
-              : "nav-item"
-          }
-        >
-          <Link to="/search" className="nav-link">
-            Search
-          </Link>
-        </li> */}
       </ul>
     </div>
+        <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+                <a className="nav-link" href="/admin">Admin Login</a>
+            </li>
+        </ul>
   </nav>
 );
 
