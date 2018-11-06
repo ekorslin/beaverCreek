@@ -16,7 +16,7 @@ class Home extends Component {
             <div className="carousel-item active">
                 <div className="carousel-caption d-none d-md-block">
                   <h1>Welcome to<br/>Beaver Creek Golf Course!</h1><br/>
-                  <a href="/book" id="homebutton" className="btn btn-dark pull-left" role="button">BOOK TEE-TIME</a><br/><br/>
+                  <a href="/book" id="homebutton" className="btn btn-dark" role="button">BOOK TEE-TIME</a><br/><br/>
                   <p></p>
                 </div>
             </div>
