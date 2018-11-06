@@ -8,7 +8,7 @@ require("dotenv").config();
 module.exports = function(app) {
 
   // app.post("/adminScreen", isAuthenticated, function(req, res) {
-  // passport recieves reeust. Is it okay? If yes, pass on to next function. Nestling passport here has it function as a gatekeeper.
+  // passport recieves request. Is it okay? If yes, pass on to next function. Nestling passport here has it function as a gatekeeper.
   app.post("/adminScreen", passport.authenticate('jwt', {session: false}), function(req, res) {
       console.log(req.body.adminSelected.date);
       db.TeeTime.findAll({where: { date: req.body.adminSelected.date}, order: ['time']}).then(function(dbTeeTime) {
@@ -38,7 +38,7 @@ module.exports = function(app) {
   // });
 
 
-  // use local stragety taht was set up and don't store it as a session. Thihs is nested like thihs so that you can actually ht the login route to auth.
+  // use local stragety that was set up and don't store it as a session. Thihs is nested like thihs so that you can actually ht the login route to auth.
   // React needs somewhere to store token, and when you close out of the browser, it is deleted when the session is ended.
   app.post('/login', function (req, res) {
       passport.authenticate('local', { session: false }, (err, user, info) => {

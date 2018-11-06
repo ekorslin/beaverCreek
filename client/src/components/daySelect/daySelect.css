@@ -28,34 +28,48 @@ h2 {
   color: white;
 }
 
+/* ------------------------------ */
+/* Media Queries: */
+/* ------------------------------ */
 
-div {
-    background-color: lightgreen;
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 281.98px) {
+  div {
+    /* background-color: red; */
+  }
 }
 
-@media only screen and (max-width: 991px) {
-    div {
-        background-color: lightblue;
-    }
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 282.98px) and (max-width: 758.98px) {
+  div {
+    /* background-color: blue;
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff'); */
+  }
 }
 
-@media only screen and (max-width: 758px) {
-    div {
-        background-color: red;
-    }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 759.98px) and (max-width: 991.98px) {
+  div {
+    /* background-color: yellow; */
+  }
 }
 
-@media only screen and (max-width: 475px) {
-    div {
-        background-color: yellow;
-    }
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992.98px) and (max-width: 1199.98px) {
+  div {
+    /* background-color: green; */
+  }
 }
 
-@media only screen and (max-width: 281px) {
-    div {
-        background-color: grey;
-    }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200.98px) {
+  div {
+    /* background-color: orange; */
+  }
 }
+
+
+
 
 /* Code for having the weather widget scroll from left to right */
 

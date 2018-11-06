@@ -104,5 +104,4 @@ logout = (event) => {
     );
   }}
 
-
 export default AdminScreen;
