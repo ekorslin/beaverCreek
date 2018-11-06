@@ -10,16 +10,14 @@ class Book extends Component {
     this.props.click(dateChosen);
   };
 
+
+
   render() {
     return (
       <div>
-        <div>
-          <a class="weatherwidget-io" href="https://forecast7.com/en/42d40n88d74/capron/?unit=us" data-label_1="CAPRON" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="sky" >CAPRON WEATHER</a>
-        </div>
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-            <img className="d-block w-100 img-fluid" src="./put.jpg" alt="First slide"/>
               <div className="carousel-caption d-none d-md-block">
                 <div>
                   <div className="row">
