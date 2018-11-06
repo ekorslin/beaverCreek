@@ -121,7 +121,7 @@ closeModal() {
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img className="d-block w-100 h-100 img-fluid" src="./put.jpg" alt="First slide"/>
+
                 <div className="carousel-caption d-none d-md-block">
                   <div><br/>
                     <div className="row align-items-center">
