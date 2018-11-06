@@ -15,7 +15,6 @@ class Time extends Component {
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img className="d-block w-100 img-fluid" src="./put.jpg" alt="First slide"/>
                   <div className="carousel-caption d-none d-md-block">
                     <div className="row">
                     <div className="col-md-2"></div>

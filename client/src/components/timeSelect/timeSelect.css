@@ -50,6 +50,17 @@ p {
   padding-bottom: 18%;
 } */
 
+.carousel-item {
+  background-image: url('../../assets/put.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel-caption {
+  position: static !important;
+}
+
 .carousel {
   height: 100%;
   width: 100%;
