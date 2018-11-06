@@ -56,7 +56,7 @@ openModal(e) {
   e.preventDefault();
   let startHour = this.refs.time.value.slice(0,2)
   let startHourInteger = parseInt(startHour) + 6;
-  
+
 
   let endHourInteger = parseInt(startHour) + 10;
   let endHour = endHourInteger.toString();
@@ -79,7 +79,7 @@ openModal(e) {
     console.log(this.refs.date.value+"T"+startHour+":00:00-4:00");
     console.log(this.state.event);
   });
-  
+
   var userInfo = {
     date: this.refs.date.value,
     time: this.refs.time.value,
@@ -90,7 +90,7 @@ openModal(e) {
     comments: this.refs.additionalComments.value,
     cart: this.refs.cart.checked
   }
-  
+
   axios.post('/submit', {
     TeeTime: userInfo
   })
@@ -100,7 +100,7 @@ openModal(e) {
   .catch(function (error) {
     console.log(error);
   });
- 
+
 }
 
 afterOpenModal() {
@@ -184,9 +184,13 @@ closeModal() {
                       <form>
                         Thank you, {this.state.name}.  We look forward to seeing you on {this.props.date}.
                         <br /><br />
-                        
-                        <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
-                        <AddToCalendar event={this.state.event}/>
+                        <div className="text-center">
+                          <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
+                          <hr />
+                          </div>
+                          <div className="text-center">
+                          <AddToCalendar event={this.state.event}/>
+                        </div>
                       </form>
                   </Modal>
                 </div>
