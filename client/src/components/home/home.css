@@ -14,11 +14,14 @@ h1 {
   font-family: 'Josefin Sans', sans-serif;
   text-shadow: 2px 2px 8px black;
   text-align: center;
+  padding-top: 9%;
 }
+/* Here's some new code that i'm trying to commit */
 
 p {
   text-shadow: 2px 2px 8px black;
   text-align: left;
+  padding-top: 9%;
 }
 .carousel {
   height: 100%;
