@@ -4,6 +4,7 @@ import axios from "../../api/axios";
 // import "./stylesheets/style.css";
 import "./Contact.css";
 
+// creating class called Contact
 class Contact extends Component {
 
   contactUs = (event) => {
