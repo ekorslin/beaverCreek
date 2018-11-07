@@ -11,7 +11,7 @@ function Footer(/*props*/) {
     <footer className="navbar-dark  bg-dark" id="footerSection">
       <div className="container">
         <div className="row">
-          <div className="col-lg-3 col-md-6 text-center">
+          <div className="col-lg-3 col-md-4 text-center">
             <div className="service-box mt-4 mx-auto">
               <i className="fa fa-2x fa-cutlery text-danger mb-3 sr-icons"></i>
               <h5 className="mb-3 text-faded">Dinner's On!</h5>
