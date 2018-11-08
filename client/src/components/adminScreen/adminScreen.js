@@ -66,10 +66,14 @@ logout = (event) => {
   render() {
     if (!sessionStorage.jwt) this.props.history.push('/admin');
     return (
-    <div><br/>
+    <div>
+    <div className="row">
+      <div className="col-md-2"></div>
+    <br/>
+      <div className="col-md-8">
         <h2 className="mbl text-center">Select a Day<br/>to Manage Tee-Times</h2>
         <form>
-          <input className="center" type="date" ref="date"/><br />
+          <input className="center" type="date" ref="date"/>
           <button type="submit" onClick={this.onSubmit.bind(this)} className="btn btn-outline-dark center">Submit</button>
         </form><br/>
         <table>
@@ -101,6 +105,8 @@ logout = (event) => {
         <br/>
         <button type="submit" onClick={this.logout.bind(this)} className="btn btn-outline-dark center">Logout</button>
         <br />
+        </div>
+        </div>
       </div>
     );
   }}

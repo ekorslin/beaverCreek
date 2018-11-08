@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import axios from 'axios';
 import axios from "../../api/axios";
 // import "./stylesheets/style.css";
-import "./Contact.css";
+import "./contact.css";
 
 // creating class called Contact
 class Contact extends Component {
