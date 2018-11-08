@@ -32,10 +32,10 @@ class Contact extends Component {
     return (
     <div>
 
-      <div class="corner-ribbon top-left sticky red shadow">Undergoing Maintenance</div>
-      <div class="corner-ribbon top-right sticky blue">Undergoing Maintenance</div>
-      <div class="corner-ribbon bottom-left sticky orange">Undergoing Maintenance</div>
-      <div class="corner-ribbon bottom-right sticky green shadow">Undergoing Maintenance</div>
+      <div class="corner-ribbon top-left sticky red shadow">Undergoing Maintenance1</div>
+      <div class="corner-ribbon top-right sticky blue">Undergoing Maintenance2</div>
+      <div class="corner-ribbon bottom-left sticky orange">Undergoing Maintenance3</div>
+      <div class="corner-ribbon bottom-right sticky green shadow">Undergoing Maintenance4</div>
 
       <div className="row">
       <div className="col-md-4"></div>
