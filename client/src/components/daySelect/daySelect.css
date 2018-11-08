@@ -15,71 +15,37 @@ h2 {
   text-align: left;
 }
 
+.carousel-item {
+  background-image: url('../../assets/put.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel-caption {
+  position: static !important;
+}
+
+.carousel-inner {
+  width: 100%;
+  max-height: 100%;
+}
+
+.rwdpDayBoxDesktop .rwdp-DayCircle-today {
+    color: white;
+    position: absolute;
+    top: -28px;
+}
+
 .rwdpDayBoxDesktop .rwdp-DayCircle {
-   /* border: 2px solid blue; */
+   border: 2px solid #2d99bf;
    color: white;
 }
 
-.rwdp-DayCircle .rwdp-DayCircle-unavailable .rwdp-flex-box .rwdp-flex-column .rwdp-justify-content-center .rwdp-align-items-center {
+/* .rwdp-DayCircle .rwdp-DayCircle-unavailable .rwdp-flex-box .rwdp-flex-column .rwdp-justify-content-center .rwdp-align-items-center {
 
-}
+} */
 
 .rwdp-DayCircle-unavailable-text .rwdp-DayCircle {
   color: white;
 }
-
-
-div {
-    background-color: lightgreen;
-}
-
-@media only screen and (max-width: 991px) {
-    div {
-        background-color: lightblue;
-    }
-}
-
-@media only screen and (max-width: 758px) {
-    div {
-        background-color: red;
-    }
-}
-
-@media only screen and (max-width: 475px) {
-    div {
-        background-color: yellow;
-    }
-}
-
-@media only screen and (max-width: 281px) {
-    div {
-        background-color: grey;
-    }
-}
-
-/* Code for having the weather widget scroll from left to right */
-
-/* .weatherwidget-io {
-    position: relative;
-
-    -webkit-animation: myfirst 20s linear 1s infinite;
-    animation: myfirst 20s linear 1s infinite;
-}
-
-
-@-webkit-keyframes myfirst {
-    0%   {left:0%;}
-    25%  {left:25%;}
-    50%  {left:50%;}
-    75%  {left:75%;}
-    100% {left:100%;}
-}
-
-
-@keyframes myfirst {
-  0%   {left:0%;}
-  25%  {left:25%;}
-  50%  {left:50%;}
-  75%  {left:75%;}
-  100% {left:100%;}
-} */

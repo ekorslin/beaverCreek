@@ -1,0 +1,17 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+.adminGrouping {
+  padding-top: 10%;
+  padding-bottom: 75px;
+}
+
+.wrapper {
+  background-image: url('../../assets/put.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: static !important;
+}

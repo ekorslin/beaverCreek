@@ -23,3 +23,52 @@ footer {
   padding-bottom: @padding-small-horizontal;
   padding-top: @padding-small-horizontal / 2;
 } */
+
+
+
+/* ------------------------------ */
+/* Media Queries: */
+/* ------------------------------ */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 281.98px) {
+  div {
+    /* background-color: red; */
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 282.98px) and (max-width: 758.98px) {
+  div {
+    /* background-color: blue;
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff'); */
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 759.98px) and (max-width: 991.98px) {
+  div {
+    /* background-color: yellow; */
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992.98px) and (max-width: 1199.98px) {
+  div {
+    /* background-color: green; */
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200.98px) {
+  div {
+    /* background-color: orange; */
+  }
+}
+
+/* For smallest phone screens */
+@media (max-width: 399px) {
+  div {
+    /* background-color: orange; */
+  }
+}

@@ -1,45 +1,33 @@
+// Requring our models index file for sequelize purposes
 const db = require("../models");
+// Requiring the isAuthenticated js file, which serves as middleware for restricting routes that a user is not allowed to visit if they are not logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated.js");
 // Requiring our models and passport as we've configured it
 const passport = require("../config/passport");
+// Requiring the JSON web token package so that we can use these tokens for authenticating
 const jwt = require("jsonwebtoken");
+// Requiring the zero-dependency "dotenv" module that loads environment variables from a .env file into process.env
+// We are storing this configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 require("dotenv").config();
 
 module.exports = function(app) {
 
-  // app.post("/adminScreen", isAuthenticated, function(req, res) {
-  // passport recieves reeust. Is it okay? If yes, pass on to next function. Nestling passport here has it function as a gatekeeper.
-  app.post("/adminScreen", passport.authenticate('jwt', {session: false}), function(req, res) {
-      console.log(req.body.adminSelected.date);
-      db.TeeTime.findAll({where: { date: req.body.adminSelected.date}, order: ['time']}).then(function(dbTeeTime) {
-          res.json(dbTeeTime);
-      });
+// Passport recieves a request. We check to see if the requset is okay, If it is, pass it on to next function.
+// Nestling passport here, as it functions as a gatekeeper.
+app.post("/adminScreen", passport.authenticate('jwt', {session: false}), function(req, res) {
+  // logging the date that the admin chooses to verify whether or not it shows
+  console.log(req.body.adminSelected.date);
+  // This is our sequelize query in which we pull the dates from the database that match the dates that the admin entered
+  db.TeeTime.findAll({where: { date: req.body.adminSelected.date}, order: ['time']}).then(function(dbTeeTime) {
+    // Sending a JSON response composed of a stringified version of the specified data from dbTeeTime
+    res.json(dbTeeTime);
   });
+});
 
-  // app.get("/success", isAuthenticated, function(req, res) {
-  // app.get("/success", function(req, res) {
-  //     console.log("You have successfully logged in!");
-  //     res.json("SUCCESS IS YOURS");
-  // });
-
-  // // Using the passport.authenticate middleware with our local strategy.
-  // // If the user has valid login credentials, send them to the members page.
-  // // Otherwise the user will be sent an error
-  //
-  // app.post("/login", passport.authenticate("local", { session: false }), function(req, res) {
-  //
-  //
-  //   // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-  //   // So we're sending the user back the route to the members page because the redirect will happen on the front end
-  //   // They won't get this or even be able to access this page if they aren't authed
-  //
-  //   res.json(res.data);
-  //
-  // });
-
-
-  // use local stragety taht was set up and don't store it as a session. Thihs is nested like thihs so that you can actually ht the login route to auth.
-  // React needs somewhere to store token, and when you close out of the browser, it is deleted when the session is ended.
+  // Using local strategy for our login route that was set up and don't store it as a session.
+  // This is nested like this so that you can hit the login route to auth.
+  // React needs somewhere to store token, so we are storing it in session storage.
+  // The token is deleted when the session is ended, via logout or an exit of the browser.
   app.post('/login', function (req, res) {
       passport.authenticate('local', { session: false }, (err, user, info) => {
         if (!user) {
@@ -73,11 +61,9 @@ module.exports = function(app) {
     }).then(function() {
         window.location.href="/admin";
         res.sendStatus(201);
-    //   res.redirect(307, "/admin");
     }).catch(function(err) {
       console.log(err);
       res.json(err);
-      // res.status(422).json(err.errors[0].message);
     });
   });
 

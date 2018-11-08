@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Parent from "./components/parent";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faKey, faGhost, faRing, faFutbol, faBasketballBall, faGolfBall } from '@fortawesome/free-solid-svg-icons';
+import "./App.css";
 
 library.add(faEnvelope, faKey, faGhost, faRing, faFutbol, faBasketballBall, faGolfBall);
 
@@ -15,7 +16,7 @@ const App = () => (
      <div>
         <Navbar />
          <Wrapper>
-                <Parent />
+            <Parent />
          </Wrapper>
         <Footer />
     </div>
