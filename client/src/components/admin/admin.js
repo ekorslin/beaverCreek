@@ -25,7 +25,6 @@ class Admin extends Component {
     }
   signUp = (event) => {
     this.props.history.push("/signup");
-
   }
 
   render() {
@@ -50,9 +49,7 @@ class Admin extends Component {
             <div className="col-md-3">
             <button type="submit" className="btn btn-outline-light" onClick={this.login.bind(this)}>Login</button>
             </div>
-            
             <button type="submit" className="btn btn-outline-light" onClick={this.signUp.bind(this)}>Register</button>
-            
             <div className="col-md-4"></div>
             </div>
           </form>
