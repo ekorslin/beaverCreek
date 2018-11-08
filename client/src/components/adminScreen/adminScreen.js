@@ -68,9 +68,9 @@ logout = (event) => {
     return (
     <div>
     <div className="row">
-      <div className="col-md-5"></div>
+      <div className="col-md-2"></div>
     <br/>
-      <div className="col-md-7">
+      <div className="col-md-8">
         <h2 className="mbl text-center">Select a Day<br/>to Manage Tee-Times</h2>
         <form>
           <input className="center" type="date" ref="date"/>

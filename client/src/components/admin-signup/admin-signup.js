@@ -31,7 +31,7 @@ class AdminSignup extends Component {
     return (
     <div><br/>
     <div className="row">
-    <div className="col-md-7"></div>
+    <div className="col-md-4"></div>
     <div className="col-md-4">
       <h2>Administrator Registration</h2>
       <form className="login">
@@ -57,7 +57,7 @@ class AdminSignup extends Component {
       <p>Or return to login <a href="/admin">here</a></p>
     </div>
     </div>
-    <div className="col-md-1"></div>
+    <div className="col-md-4"></div>
     </div>
     
     );
