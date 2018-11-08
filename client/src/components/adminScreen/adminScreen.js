@@ -71,10 +71,12 @@ logout = (event) => {
       <div className="col-md-2"></div>
     <br/>
       <div className="col-md-8">
-        <h2 className="mbl text-center">Select a Day<br/>to Manage Tee-Times</h2>
+      <div className="display">
+        <h2 className="mbl text-center">Select a Day to Manage Tee-Times</h2>
         <form>
           <input className="center" type="date" ref="date"/>
-          <button type="submit" onClick={this.onSubmit.bind(this)} className="btn btn-outline-dark center">Submit</button>
+          <br />
+          <button type="submit" onClick={this.onSubmit.bind(this)} className="btn btn-outline-light center">Submit</button>
         </form><br/>
         <table>
         <tbody>
@@ -103,8 +105,9 @@ logout = (event) => {
         </tbody>
         </table>
         <br/>
-        <button type="submit" onClick={this.logout.bind(this)} className="btn btn-outline-dark center">Logout</button>
+        <button type="submit" onClick={this.logout.bind(this)} className="btn btn-outline-light center">Logout</button>
         <br />
+        </div>
         </div>
         </div>
       </div>
