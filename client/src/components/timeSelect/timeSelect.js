@@ -10,7 +10,7 @@ class Time extends Component {
 
   render() {
     return (
-      <div><br/>
+      <div>
         <div>
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <div className="carousel-inner">

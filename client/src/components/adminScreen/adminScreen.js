@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import axios from 'axios';
 import axios from "../../api/axios";
-import "./stylesheets/style.css";
+// import "./stylesheets/style.css";
+import "./AdminScreen.css";
 
 class AdminScreen extends Component {
   constructor(props) {

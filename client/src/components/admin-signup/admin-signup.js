@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import axios from 'axios';
 import axios from "../../api/axios";
-import "./stylesheets/style.css";
+// import "./stylesheets/style.css";
+import "./Admin-Signup.css";
 
 class AdminSignup extends Component {
 

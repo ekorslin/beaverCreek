@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import axios from 'axios';
 import axios from "../../api/axios";
-import "./stylesheets/style.css";
+// import "./stylesheets/style.css";
+import "./Admin.css";
 
 class Admin extends Component {
 
@@ -25,27 +26,26 @@ class Admin extends Component {
 
   render() {
     return (
-    <div><br/>
-    <div className="row">
-    <div className="col-md-4"></div>
-    <div className="col-md-4">
-      <h2>Administrator Login</h2>
-      <form className="login">
-        <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" className="form-control" ref="email" placeholder="Email"/>
+    <div>
+      <div className="row justify-content-center adminGrouping">
+        <div className="col-md-4">
+          <h2>Administrator Login</h2>
+          <form className="login">
+            <div className="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" className="form-control" ref="email" placeholder="Email"/>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" className="form-control" ref="password" placeholder="Password"/>
+            </div>
+            <button type="submit" className="btn btn-outline-dark" onClick={this.login.bind(this)}>Login</button>
+          </form>
+          <br />
+          <p>Or sign up <a href="/signup">here</a></p>
         </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" ref="password" placeholder="Password"/>
-        </div>
-        <button type="submit" className="btn btn-outline-dark" onClick={this.login.bind(this)}>Login</button>
-      </form>
-      <br />
-      <p>Or sign up <a href="/signup">here</a></p>
-    </div>
-    </div>
-    <div className="col-md-4"></div>
+      </div>
+      <div className="col-md-4"></div>
     </div>
     );
   }
