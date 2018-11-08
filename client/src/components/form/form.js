@@ -121,15 +121,15 @@ closeModal() {
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img className="d-block w-100 h-100 img-fluid" src="./put.jpg" alt="First slide"/>
+
                 <div className="carousel-caption d-none d-md-block">
                   <div><br/>
                     <div className="row align-items-center">
+                    <div className="col-md-3"></div>
+                    <div className="col-md-6">
                       <div class="flex-container">
-                        <h2 class="formHeader" className="mbl text-center" ref="header" value={this.props.date}>Complete the Following<br/>to Finalize your Booking for {this.props.date}:</h2><br/>
+                        <h2 class="formHeader" className="mbl text-center" ref="header" value={this.props.date}>Complete the Following to Finalize your Booking for {this.props.date}:</h2><br/>
                       </div>
-                      <div className="col-md-6">
-
                       <form>
                         <div className="form-group">
                           <label className="text-dark font-weight-bold font-italic">Full Name</label>
@@ -196,6 +196,7 @@ closeModal() {
                 </div>
             </div>
           </div>
+
         </div>
       </div>
     );

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import axios from 'axios';
 import axios from "../../api/axios";
-import "./stylesheets/style.css";
+// import "./stylesheets/style.css";
+import "./Admin-Signup.css";
 
 class AdminSignup extends Component {
 
@@ -38,7 +39,7 @@ class AdminSignup extends Component {
           <label for="exampleInputEmail1">First Name</label>
           <input type="text" className="form-control" ref="firstName" placeholder="FIrst Name"/>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="exampleInputPassword1">Last Name</label>
           <input type="text" className="form-control" ref="lastName" placeholder="Last Name"/>
         </div>
@@ -46,7 +47,7 @@ class AdminSignup extends Component {
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" className="form-control" ref="email" placeholder="Email"/>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" ref="password" placeholder="Password"/>
         </div>
@@ -58,6 +59,7 @@ class AdminSignup extends Component {
     </div>
     <div className="col-md-4"></div>
     </div>
+    
     );
   }
 }

@@ -1,0 +1,42 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.display {
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
+td {
+  color: black;
+  background: 	#DCDCDC;
+}
+
+th {
+  background-color:#808080;
+  color: white;
+}
+
+.wrapper {
+  background-image: url('../../assets/man.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: static !important;
+}

@@ -14,11 +14,9 @@ class Home extends Component {
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img className="d-block w-100 img-fluid" src="./put.jpg" alt="First slide"/>
                 <div className="carousel-caption d-none d-md-block">
-                  <h1>Welcome to<br/>Beaver Creek Golf Course!</h1><br/>
-                  <a href="/book" class="btn btn-dark pull-left" role="button">BOOK TEE-TIME</a><br/><br/>
-                  <p></p>
+                  <h1>Welcome to<br/>Beaver Creek Golf Course!!!</h1><br/>
+                  <a href="/book" id="homebutton" className="btn btn-dark" role="button">BOOK TEE-TIME</a>
                 </div>
             </div>
           </div>
