@@ -18,13 +18,23 @@ table, th, td {
   margin-left: auto;
   margin-right: auto;
 }
+.display {
+  padding-top: 15%;
+  padding-bottom: 15%;
+}
+
+td {
+  color: black;
+  background: 	#DCDCDC;
+}
 
 th {
-  background-color:lightgrey;
+  background-color:#808080;
+  color: white;
 }
 
 .wrapper {
-  background-image: url('../../assets/put.jpg');
+  background-image: url('../../assets/man.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
