@@ -2,8 +2,8 @@
   display: flex;
 }
 
-.flex-container > div {
-}
+/* .flex-container > div {
+} */
 
 .carousel-item {
   background-image: url('../../assets/put.jpg');
@@ -11,6 +11,11 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* formHeader {
+  text-align: center;
+  
+} */
 
 .carousel-caption {
   position: static !important;
