@@ -47,7 +47,7 @@ class Contact extends Component {
             <div className="row">
             <div className="col-md-4"></div>
             <div className="col-md-4">
-              <h2 className="contactHeader">Contact Us</h2>
+              <h2 className="contactHeader mbl text-center">Contact Us</h2>
               <form className="contactForm">
                 <div className="form-group">
                   <label for="exampleContactInputFirstName">First Name</label>
@@ -63,7 +63,7 @@ class Contact extends Component {
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlTextarea">Description of Issue</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea" rows="5"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea" rows="3"></textarea>
                 </div>
 
 

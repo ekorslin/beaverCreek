@@ -42,80 +42,10 @@ h2 {
    color: white;
 }
 
-.rwdp-DayCircle .rwdp-DayCircle-unavailable .rwdp-flex-box .rwdp-flex-column .rwdp-justify-content-center .rwdp-align-items-center {
+/* .rwdp-DayCircle .rwdp-DayCircle-unavailable .rwdp-flex-box .rwdp-flex-column .rwdp-justify-content-center .rwdp-align-items-center {
 
-}
+} */
 
 .rwdp-DayCircle-unavailable-text .rwdp-DayCircle {
   color: white;
 }
-
-/* ------------------------------ */
-/* Media Queries: */
-/* ------------------------------ */
-
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 281.98px) {
-  div {
-    /* background-color: red; */
-  }
-}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 282.98px) and (max-width: 758.98px) {
-  div {
-    /* background-color: blue;
-    background-image: url('https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff'); */
-  }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 759.98px) and (max-width: 991.98px) {
-  div {
-    /* background-color: yellow; */
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992.98px) and (max-width: 1199.98px) {
-  div {
-    /* background-color: green; */
-  }
-}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200.98px) {
-  div {
-    /* background-color: orange; */
-  }
-}
-
-
-
-
-/* Code for having the weather widget scroll from left to right */
-
-/* .weatherwidget-io {
-    position: relative;
-
-    -webkit-animation: myfirst 20s linear 1s infinite;
-    animation: myfirst 20s linear 1s infinite;
-}
-
-
-@-webkit-keyframes myfirst {
-    0%   {left:0%;}
-    25%  {left:25%;}
-    50%  {left:50%;}
-    75%  {left:75%;}
-    100% {left:100%;}
-}
-
-
-@keyframes myfirst {
-  0%   {left:0%;}
-  25%  {left:25%;}
-  50%  {left:50%;}
-  75%  {left:75%;}
-  100% {left:100%;}
-} */
