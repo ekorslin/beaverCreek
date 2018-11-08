@@ -28,6 +28,8 @@ class Admin extends Component {
     return (
     <div>
       <div className="row justify-content-center adminGrouping">
+      <div className="col-md-4">
+      </div>
         <div className="col-md-4">
           <h2>Administrator Login</h2>
           <form className="login">
@@ -35,7 +37,7 @@ class Admin extends Component {
               <label for="exampleInputEmail1">Email address</label>
               <input type="email" className="form-control" ref="email" placeholder="Email"/>
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label for="exampleInputPassword1">Password</label>
               <input type="password" className="form-control" ref="password" placeholder="Password"/>
             </div>

@@ -31,7 +31,7 @@ class AdminSignup extends Component {
     return (
     <div><br/>
     <div className="row">
-    <div className="col-md-4"></div>
+    <div className="col-md-7"></div>
     <div className="col-md-4">
       <h2>Administrator Registration</h2>
       <form className="login">
@@ -39,7 +39,7 @@ class AdminSignup extends Component {
           <label for="exampleInputEmail1">First Name</label>
           <input type="text" className="form-control" ref="firstName" placeholder="FIrst Name"/>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="exampleInputPassword1">Last Name</label>
           <input type="text" className="form-control" ref="lastName" placeholder="Last Name"/>
         </div>
@@ -47,7 +47,7 @@ class AdminSignup extends Component {
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" className="form-control" ref="email" placeholder="Email"/>
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" ref="password" placeholder="Password"/>
         </div>
@@ -57,8 +57,9 @@ class AdminSignup extends Component {
       <p>Or return to login <a href="/admin">here</a></p>
     </div>
     </div>
-    <div className="col-md-4"></div>
+    <div className="col-md-1"></div>
     </div>
+    
     );
   }
 }
