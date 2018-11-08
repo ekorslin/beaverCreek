@@ -31,8 +31,14 @@ h2 {
   max-height: 100%;
 }
 
+.rwdpDayBoxDesktop .rwdp-DayCircle-today {
+    color: white;
+    position: absolute;
+    top: -28px;
+}
+
 .rwdpDayBoxDesktop .rwdp-DayCircle {
-   /* border: 2px solid blue; */
+   border: 2px solid #2d99bf;
    color: white;
 }
 
