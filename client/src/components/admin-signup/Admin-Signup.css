@@ -1,0 +1,12 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+.wrapper {
+  background-image: url('../../assets/man.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: static !important;
+}
