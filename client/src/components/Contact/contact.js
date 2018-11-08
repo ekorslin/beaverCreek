@@ -31,34 +31,40 @@ class Contact extends Component {
   render() {
     return (
     <div>
-    <div className="row">
-    <div className="col-md-4"></div>
-    <div className="col-md-4">
-      <h2>Contact Us</h2>
-      <form className="contactForm">
-        <div className="form-group">
-          <label for="exampleContactInputFirstName">First Name</label>
-          <input type="text" className="form-control" ref="firstName" placeholder="FIrst Name"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleContactInputLastName">Last Name</label>
-          <input type="text" className="form-control" ref="lastName" placeholder="Last Name"/>
-        </div>
-        <div className="form-group">
-          <label for="exampleContactInputEmail">Email address</label>
-          <input type="email" className="form-control" ref="email" placeholder="Email"/>
-        </div>
-        <div class="form-group">
-          <label for="exampleContactInputPassword">Password</label>
-          <input type="password" className="form-control" ref="password" placeholder="Password"/>
-        </div>
-        <button type="submit" className="btn btn-outline-dark" onClick={this.contactUs.bind(this)}>Submit</button>
-      </form>
-      <br />
-      <p>Or return to main page <a href="/">here</a></p>
-    </div>
-    </div>
-    <div className="col-md-4"></div>
+
+      <div class="corner-ribbon top-left sticky red shadow">Undergoing Maintenance</div>
+      <div class="corner-ribbon top-right sticky blue">Undergoing Maintenance</div>
+      <div class="corner-ribbon bottom-left sticky orange">Undergoing Maintenance</div>
+      <div class="corner-ribbon bottom-right sticky green shadow">Undergoing Maintenance</div>
+
+      <div className="row">
+      <div className="col-md-4"></div>
+      <div className="col-md-4">
+        <h2>Contact Us</h2>
+        <form className="contactForm">
+          <div className="form-group">
+            <label for="exampleContactInputFirstName">First Name</label>
+            <input type="text" className="form-control" ref="firstName" placeholder="FIrst Name"/>
+          </div>
+          <div class="form-group">
+            <label for="exampleContactInputLastName">Last Name</label>
+            <input type="text" className="form-control" ref="lastName" placeholder="Last Name"/>
+          </div>
+          <div className="form-group">
+            <label for="exampleContactInputEmail">Email address</label>
+            <input type="email" className="form-control" ref="email" placeholder="Email"/>
+          </div>
+          <div class="form-group">
+            <label for="exampleContactInputPassword">Password</label>
+            <input type="password" className="form-control" ref="password" placeholder="Password"/>
+          </div>
+          <button type="submit" className="btn btn-outline-dark" onClick={this.contactUs.bind(this)}>Submit</button>
+        </form>
+        <br />
+        <p>Or return to main page <a href="/">here</a></p>
+      </div>
+      </div>
+      <div className="col-md-4"></div>
     </div>
     );
   }
