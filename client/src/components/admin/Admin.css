@@ -6,17 +6,19 @@ form.login {
 
 
 .adminGrouping {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 75px;
 }
+
+/* .btn {
+  padding-bottom: 400px;
+} */
 
 
 
 
 .wrapper {
-  background-image: url('../../assets/man.jpg');
+  background-image: url('../../assets/put.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
