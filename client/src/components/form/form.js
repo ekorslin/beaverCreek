@@ -58,7 +58,7 @@ openModal(e) {
   let startHourInteger = parseInt(startHour) + 6;
 
 
-  let endHourInteger = parseInt(startHour) + 10;
+  let endHourInteger = parseInt(startHour) + 8;
   let endHour = endHourInteger.toString();
   let event = {...this.state.event}
   console.log(event);
@@ -159,7 +159,7 @@ closeModal() {
                         <div className="form-check">
                           <label className="form-check-label">
                             <input type="checkbox" ref="cart" className="form-check-input"/>
-                            Will you Require Cart(s)?
+                            Cart Needed?
                           </label>
                         </div><br/>
                       <button type="submit" onClick={this.openModal} className="btn btn-outline-dark text-light">Submit</button>
