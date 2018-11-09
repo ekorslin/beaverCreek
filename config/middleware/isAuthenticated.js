@@ -4,8 +4,6 @@ module.exports = function(req, res, next) {
   if (req.user) {
     return next();
   }
-
-  // If the user isn't logged in, redirect them to the login page
+  // If the user isn't logged in, send a 401 error - An HTTP status code that means the page you were trying to access cannot be loaded until you first log in with a valid user ID and password.
   return res.sendStatus(401);
-  // return res.redirect("/");
 };
