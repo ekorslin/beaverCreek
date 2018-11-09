@@ -58,7 +58,7 @@ openModal(e) {
   let startHourInteger = parseInt(startHour) + 6;
 
 
-  let endHourInteger = parseInt(startHour) + 10;
+  let endHourInteger = parseInt(startHour) + 8;
   let endHour = endHourInteger.toString();
   let event = {...this.state.event}
   console.log(event);
