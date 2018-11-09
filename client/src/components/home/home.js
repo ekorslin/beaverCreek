@@ -14,10 +14,13 @@ class Home extends Component {
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-                <div className="carousel-caption d-none d-md-block">
-                  <h1>Welcome to<br/>Beaver Creek Golf Course!!!</h1><br/>
-                  <a href="/book" id="homebutton" className="btn btn-dark" role="button">BOOK TEE-TIME</a>
-                </div>
+              <div className="carousel-caption d-none d-md-block">
+                <h1>Welcome to
+                <br/>
+                Beaver Creek Golf Course!!!</h1>
+                <br/>
+                <a href="/book" id="homebutton" className="btn btn-dark" role="button">BOOK TEE-TIME</a>
+              </div>
             </div>
           </div>
         </div>
