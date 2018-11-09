@@ -1,29 +1,34 @@
-# Create React Express App
+# The 'Tee Time' App
+## A M.E.R.N. Application for Beaver Creek Golf Course in Capron, IL
 
-## About This Boilerplate
+#### Application Uses:
+This app is a prototype for an alternative to the course's current site.  Upgrades include the ability for clientele to now reserve tee times for future outings at the course online with ease.  The current site does not allow this, unfortuntely.  The addition of the online booking feature is also beneficial in that course employees, in theory, will no longer be tied down to phone responsibilities, freeing them up to focus on other course operations.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+#### View the Heroku-deployed Site:
+[Visit Site](https://morning-coast-79159.herokuapp.com/form)
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+#### Running the Application Locally
 
-## Starting the app locally
-
-Start by installing front and backend dependencies. While in this directory, run the following command:
-
+If desired, visitors are welcome to pull repository files and run locally.  Start by installing front- and back-end dependencies. While in this directory, run the following command:
 ```
 yarn install
 ```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
+This should install node modules within the server and the client folder.After both installations complete, run the following command in your terminal:
 ```
 yarn start
 ```
+Your app should now be running on <http://localhost:3000>. 
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+#### Technologies Used:
+1.  ReactJS
+2.  Express
+3.  MySQL & Sequelize
+4.  Node.JS
+5.  Passport Data Authentication
+6.  Heroku & JawsDB
 
-## Deployment (Heroku)
+#### Documentation for User Assistance:
+1.  [React Documentation](https://reactjs.org/)
+2.  [Passport Documentation](http://www.passportjs.org/docs/username-password/)
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+
