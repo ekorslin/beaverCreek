@@ -67,7 +67,7 @@ app.post("/adminScreen", passport.authenticate('jwt', {session: false}), functio
     });
   });
 
-  // Route for logging user out
+  // Route for logging user out of their session
   app.post("/logout", function(req, res) {
     req.logout();
     // res.redirect("/");
@@ -90,6 +90,7 @@ app.post("/adminScreen", passport.authenticate('jwt', {session: false}), functio
     }
   });
 
+  // CREATE route for adding user inputs to our table in the database.
   app.post("/submit", function(req, res) {
       db.TeeTime.create({
           date: req.body.TeeTime.date,
@@ -106,7 +107,6 @@ app.post("/adminScreen", passport.authenticate('jwt', {session: false}), functio
   });
 
   // DELETE route for deleting teetimes. We can get the id of the teetime we want to delete from
-  // req.params.id
   app.post("/adminScreen/delete", function(req, res) {
       console.log(req.body);
       db.TeeTime.destroy({
