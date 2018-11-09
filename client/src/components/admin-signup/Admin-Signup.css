@@ -1,8 +1,10 @@
+/* spaces between form inputs to allow for a more aesthitcally pleasing admin registeration screen */
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
+/* more page spacing options for entire form */
 .wrapper {
   background-image: url('../../assets/put.jpg');
   background-size: cover;
@@ -11,6 +13,7 @@ form.login {
   position: static !important;
 }
 
+/* Includes background image and formatting for login page */
 .form-group {
   color: white;
 }

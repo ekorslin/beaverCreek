@@ -13,7 +13,6 @@ class Admin extends Component {
       password: this.refs.password.value,
     })
     .then(res => {
-      // window.location.href="/adminScreen";
       sessionStorage.setItem("jwt", res.data.token);
       this.props.history.push("/adminScreen");
       console.log(res.data.token);
@@ -31,8 +30,7 @@ class Admin extends Component {
     return (
     <div>
       <div className="row justify-content-center adminGrouping">
-      <div className="col-md-1">
-      </div>
+        <div className="col-md-1"></div>
         <div className="col-md-4">
           <h2>Administrator Login</h2>
           <form className="login">
