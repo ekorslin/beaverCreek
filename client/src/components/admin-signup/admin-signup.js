@@ -27,17 +27,22 @@ class AdminSignup extends Component {
   });
   }
 
+  login = (event) => {
+    this.props.history.push("/admin");
+  }
+
+
   render() {
     return (
     <div><br/>
-    <div className="row">
+    <div className="row adminGrouping">
     <div className="col-md-4"></div>
     <div className="col-md-4">
       <h2>Administrator Registration</h2>
       <form className="login">
         <div className="form-group">
           <label for="exampleInputEmail1">First Name</label>
-          <input type="text" className="form-control" ref="firstName" placeholder="FIrst Name"/>
+          <input type="text" className="form-control" ref="firstName" placeholder="First Name"/>
         </div>
         <div className="form-group">
           <label for="exampleInputPassword1">Last Name</label>
@@ -51,10 +56,16 @@ class AdminSignup extends Component {
           <label for="exampleInputPassword1">Password</label>
           <input type="password" className="form-control" ref="password" placeholder="Password"/>
         </div>
-        <button type="submit" className="btn btn-outline-dark" onClick={this.signUp.bind(this)}>Register</button>
+        <div className="row">
+            <div className="col-md-2"></div>
+            <div className="col-md-4">
+        <button type="submit" className="btn btn-outline-light" onClick={this.signUp.bind(this)}>Register</button>
+      
+        </div>
+        <button type="submit" className="btn btn-outline-light" onClick={this.login.bind(this)}>Return to Login</button>
+        <div className="col-md-4"></div>
+        </div>
       </form>
-      <br />
-      <p>Or return to login <a href="/admin">here</a></p>
     </div>
     </div>
     <div className="col-md-4"></div>
