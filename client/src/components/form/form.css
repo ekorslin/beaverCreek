@@ -1,48 +1,9 @@
-/* .form {
-  margin: 20px;
-}
-
-.form input {
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 100%;
-}
-
-h2 {
-  color: black;
-}
-
-img {
-  width: 75%;
-  height: 75%;
-}
-
-h2 {
-  padding-top:10%;
-  margin-top:10%;
-  border-top:10%;
-} */
-
-
-
-
-/* #carouselExampleIndicators {
-    width: 100%;
-}
-.carousel-item img {
-    height: 100%;
-    width: auto;
-    max-width: none;
-} */
-
-
 .flex-container {
   display: flex;
 }
 
-.flex-container > div {
-}
+/* .flex-container > div {
+} */
 
 .carousel-item {
   background-image: url('../../assets/put.jpg');
@@ -50,6 +11,11 @@ h2 {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* formHeader {
+  text-align: center;
+  
+} */
 
 .carousel-caption {
   position: static !important;
@@ -61,7 +27,19 @@ h2 {
   /* background-image: url('../../assets/put.jpg'); */
 }
 
+.react-add-to-calendar__dropdown ul {
+  padding-left: 0;
+  margin: 0 auto;
+  display: inline-block;
+}
 
-/* .carousel-item {
-   background-image: url('../../assets/put.jpg');
-} */
+.react-add-to-calendar__dropdown li {
+  padding-top: 10px;
+  list-style-type: none;
+  text-align: left;
+  font-size: 20px;
+}
+
+.react-add-to-calendar__button span {
+  font-size: 25px;
+}
