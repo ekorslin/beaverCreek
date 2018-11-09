@@ -1,10 +1,14 @@
+// Requiring passport, passport and passport-local, and passport-jwt (so that we can use JSON tokens for authenticaion rather than cookies)
 var passport = require("passport");
 var LocalStrategy = require("passport-local").Strategy;
 const passportJWT = require('passport-jwt');
+// Creating a new const that takes the passportJWT.Strategy and assigning it to JWTStrategy for more efficient coding
 const JWTStrategy = passportJWT.Strategy;
+// Creating a new const that takes the passportJWT.ExtractJwt and assigning it to ExtractJWT for more efficient coding
 const ExtractJWT = passportJWT.ExtractJwt;
+// Requiring dotenv - a zero-dependency module that loads environment variables from a .env file into process.env
 require('dotenv').config();
-
+// Requring our index model and assigning it to our var db
 var db = require("../models");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
@@ -38,25 +42,30 @@ passport.use(new LocalStrategy(
   }
 ));
 
+// Using a new JWTStrategy with passport, and each request will extract the JWT from the header as a bearer token.
+// The header (first part of the JWT structure) typically consists of two parts: the type of the token, which is JWT, and the hashing algorithm being used, such as HMAC SHA256 or RSA. Whenever the user wants to access a protected route or resource, the user agent will send the JWT in the Authorization header using the Bearer schema.
+
 passport.use(new JWTStrategy(
   {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
     secretOrKey: process.env.JWT_SECRET
   },
+// The second part of the token is the payload, which contains the claims. Claims are statements about an entity (typically, the user) and additional data. There are three types of claims: registered, public, and private claims.
+// This function is passing in two parameters, jwtPayload and cb (or the callback)
   function (jwtPayload, cb) {
+    // Returning the id from the User table
     return db.User.findById(jwtPayload)
-      .then(user => {
-        return cb(null, user)
-      })
-      .catch(err => {
-        return cb(err)
-      });
+    .then(user => {
+      return cb(null, user)
+    })
+    .catch(err => {
+      return cb(err)
+    });
   }
 ));
 
-// In order to help keep authentication state across HTTP requests,
-// Sequelize needs to serialize and deserialize the user
-// Just consider this part boilerplate needed to make it all work
+// In order to help keep authentication state across HTTP requests, Sequelize needs to serialize and deserialize user
+// Consider this section as a boilerplate needed to make it all work
 passport.serializeUser(function(user, cb) {
   cb(null, user);
 });
