@@ -159,7 +159,7 @@ closeModal() {
                         <div className="form-check">
                           <label className="form-check-label">
                             <input type="checkbox" ref="cart" className="form-check-input"/>
-                            Will you Require Cart(s)?
+                            Cart Needed?
                           </label>
                         </div><br/>
                       <button type="submit" onClick={this.openModal} className="btn btn-outline-dark text-light">Submit</button>

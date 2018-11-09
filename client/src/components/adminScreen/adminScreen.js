@@ -76,7 +76,7 @@ logout = (event) => {
         <form>
           <input className="center" type="date" ref="date"/>
           <br />
-          <button type="submit" onClick={this.onSubmit.bind(this)} className="btn btn-outline-light center">Submit</button>
+          <button type="submit" onClick={this.onSubmit.bind(this)} className="btn btn-outline-light center">Manage Date</button>
         </form><br/>
         <table>
         <tbody>
@@ -87,7 +87,7 @@ logout = (event) => {
             <th>Email</th>
             <th>Phone</th>
             <th>Golfers</th>
-            <th>Cart(s)?</th>
+            <th>Cart</th>
             <th>Delete</th>
           </tr>
           {this.state.data.map((data, index) => (
