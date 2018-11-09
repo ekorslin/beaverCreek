@@ -1,9 +1,10 @@
+// Requiring express, session, passport, path, and bodyParser dependencies:
 const express = require("express");
 const session = require("express-session");
+// Requiring our passport configuration for authentication
 const passport = require("./config/passport");
 const path = require("path");
 const bodyParser = require("body-parser");
-
 // Requiring our models for syncing
 const db = require("./models");
 
@@ -19,10 +20,11 @@ const app = express();
 //   });
 // };
 
-// Define middleware here
+// Defining middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+// Initializing Passport in a session
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
