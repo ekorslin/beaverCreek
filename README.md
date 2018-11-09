@@ -1,11 +1,11 @@
 # The 'Tee Time' App
-## A M.E.R.N. Application for Beaver Creek Golf Course in Capron, IL
+## M.E.R.N. Application for Beaver Creek Golf Course in Capron, IL
 
 #### Application Uses:
 This app is a prototype for an alternative to the course's current site.  Upgrades include the ability for clientele to now reserve tee times for future outings at the course online with ease.  The current site does not allow this, unfortuntely.  The addition of the online booking feature is also beneficial in that course employees, in theory, will no longer be tied down to phone responsibilities, freeing them up to focus on other course operations.
 
 #### View the Heroku-deployed Site:
-[Visit Site](https://morning-coast-79159.herokuapp.com/form)
+[Visit Site](https://morning-coast-79159.herokuapp.com/)
 
 #### Running the Application Locally
 
