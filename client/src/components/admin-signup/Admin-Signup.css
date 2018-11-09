@@ -10,3 +10,8 @@ form.login {
   background-repeat: no-repeat;
   position: static !important;
 }
+
+.form-group {
+  color: white;
+}
+
