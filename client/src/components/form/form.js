@@ -119,9 +119,9 @@ class Form extends Component {
         <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
-                <div className="carousel-caption d-none d-md-block">
-                  <div><br/>
-                    <div className="row align-items-center">
+              <div className="carousel-caption d-none d-md-block">
+                <div><br/>
+                  <div className="row align-items-center">
                     <div className="col-md-3"></div>
                     <div className="col-md-6">
                       <div class="flex-container">
@@ -130,7 +130,7 @@ class Form extends Component {
                       <form>
                         <div className="form-group">
                           <label className="text-dark font-weight-bold font-italic">Full Name</label>
-                          <input type="text" className="form-control" name="name" ref="name" placeholder="Your Full Name"/>
+                         <input type="text" className="form-control" name="name" ref="name" placeholder="Your Full Name"/>
                         </div>
                         <div className="form-group">
                           <label className="text-dark font-weight-bold font-italic">Email Address</label>
@@ -155,45 +155,44 @@ class Form extends Component {
                         </div>
                         <div className="form-check">
                           <label className="form-check-label">
-                            <input type="checkbox" ref="cart" className="form-check-input"/>
-                            Cart Needed?
-                          </label>
-                        </div><br/>
-                      <button type="submit" onClick={this.openModal} className="btn btn-outline-dark text-light">Submit</button>
+                          <input type="checkbox" ref="cart" className="form-check-input"/>Cart Needed?</label>
+                        </div>
+                        <br/>
+                        <button type="submit" onClick={this.openModal} className="btn btn-outline-dark text-light">Submit</button>
 
                         <input type="hidden" ref="date" value={this.props.date} />
                         <input type="hidden" ref="time" value={this.props.time} />
                       </form>
-                      </div>
-                      <div className="col-md-4"></div>
-                      </div>
                     </div>
+                    <div className="col-md-4"></div>
+                   </div>
+                  </div>
 
-                 <Modal
-                      isOpen={this.state.modalIsOpen}
-                      onAfterOpen={this.afterOpenModal}
-                      onRequestClose={this.closeModal}
-                      style={customStyles}
-                      contentLabel="Example Modal"
-                    >
-                      <img src="logo.png" alt="Logo" size="75%" />
-                      <h2 ref={subtitle => this.subtitle = subtitle}>You are booked!</h2>
-                      <form>
-                        Thank you, {this.state.name}.  We look forward to seeing you on {this.props.date}.
-                        <br /><br />
-                        <div className="text-center">
-                          <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
-                          <hr />
-                          </div>
-                          <div className="text-center">
-                          <AddToCalendar event={this.state.event}/>
-                        </div>
-                      </form>
+                  <Modal
+                  isOpen={this.state.modalIsOpen}
+                  onAfterOpen={this.afterOpenModal}
+                  onRequestClose={this.closeModal}
+                  style={customStyles}
+                  contentLabel="Example Modal"
+                  >
+                    <img src="logo.png" alt="Logo" size="75%" />
+                    <h2 ref={subtitle => this.subtitle = subtitle}>You are booked!</h2>
+                  <form>
+                      Thank you, {this.state.name}.  We look forward to seeing you on {this.props.date}.
+                    <br />
+                    <br />
+                    <div className="text-center">
+                      <button className="btn btn-outline-dark" onClick={this.closeModal}>Close</button>
+                    <hr />
+                    </div>
+                    <div className="text-center">
+                    <AddToCalendar event={this.state.event}/>
+                    </div>
+                  </form>
                   </Modal>
-                </div>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     );
