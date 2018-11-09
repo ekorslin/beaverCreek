@@ -7,6 +7,7 @@ import "./contact.css";
 // creating class called Contact
 class Contact extends Component {
 
+  // function to carry out upon click of 'Submit' button
   contactUs = (event) => {
     event.preventDefault()
     var User = {
