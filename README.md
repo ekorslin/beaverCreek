@@ -8,7 +8,7 @@ This app is a prototype for an alternative to the course's current site.  Upgrad
 [Visit Site](https://morning-coast-79159.herokuapp.com/)
 
 #### Demo:
-<iframe src='https://gfycat.com/ifr/SpicyEvilGourami.gif' frameborder='0' scrolling='no' width='3340' height='1664' allowfullscreen></iframe>
+<a href="https://imgflip.com/gif/2m7b6x"><img src="https://i.imgflip.com/2m7b6x.gif" title="made at imgflip.com"/></a>
 
 #### Running the Application Locally
 
