@@ -1,8 +1,10 @@
+/* spaces between form inputs to allow for a more aesthitcally pleasing admin screen */
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
+/* more page spacing options for entire admin page */
 .center {
   display: block;
   margin-left: auto;
@@ -10,6 +12,7 @@ form.login {
   text-align: center;
 }
 
+/* table formatting */
 table, th, td {
   border: 1px solid black;
   padding-left: 10px;
@@ -23,16 +26,17 @@ table, th, td {
   padding-bottom: 15%;
 }
 
+/* table data formatting */
 td {
   color: black;
   background: 	#DCDCDC;
 }
-
+/* table header formatting */
 th {
   background-color:#808080;
   color: white;
 }
-
+/* background image & formatting */
 .wrapper {
   background-image: url('../../assets/man.jpg');
   background-size: cover;

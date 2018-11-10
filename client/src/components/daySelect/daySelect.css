@@ -1,3 +1,4 @@
+/* form formatting */
 .form {
   margin: 20px;
 }
@@ -15,6 +16,7 @@ h2 {
   text-align: left;
 }
 
+/* background image formatting */
 .carousel-item {
   background-image: url('../../assets/put.jpg');
   background-size: cover;
@@ -22,10 +24,12 @@ h2 {
   background-repeat: no-repeat;
 }
 
+/* positioning for caption */
 .carousel-caption {
   position: static !important;
 }
 
+/* image formatting for background image */
 .carousel-inner {
   width: 100%;
   max-height: 100%;
@@ -42,9 +46,7 @@ h2 {
    color: white;
 }
 
-/* .rwdp-DayCircle .rwdp-DayCircle-unavailable .rwdp-flex-box .rwdp-flex-column .rwdp-justify-content-center .rwdp-align-items-center {
-
-} */
+/* font color for dates within day-selector circles */
 
 .rwdp-DayCircle-unavailable-text .rwdp-DayCircle {
   color: white;

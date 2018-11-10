@@ -4,6 +4,7 @@ import "./daySelect.css";
 
 class Book extends Component {
 
+  // function to carry out upon click of date selected for tee-time
   onClick = (date) => {
     var dateChosen = date[0];
     this.props.history.push("/time")

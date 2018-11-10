@@ -8,8 +8,11 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
+
+    <!-- -- Links to style libraries like Bootstrap, Google Fonts, etc. in head section below -- -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <!-- Here we add the href to our logo -->
     <link rel="shortcut icon" href="./logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -42,9 +45,11 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <!-- Updating the title tag with our site's title. -->
     <title>Beaver Creek Golfing!</title>
   </head>
   <body>
+    <!-- WeatherWidget is added to the body of our index.html page here. This will allow us to use the weather on each page. -->
     <div class="weatherWidget">
       <a class="weatherwidget-io" href="https://forecast7.com/en/42d40n88d74/capron/?unit=us" data-label_1="CAPRON" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="sky" >CAPRON WEATHER</a>
     </div>
@@ -63,6 +68,7 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <script>
+      // Here we add the function necessary to run the Weather Widget. It is written in javascript, and pulls directly from the Dark Sky API.
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
     </script>
   </body>

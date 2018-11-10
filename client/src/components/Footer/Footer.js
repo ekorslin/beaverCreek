@@ -1,12 +1,9 @@
+// Dependencies
 import React from "react";
-// import { Link } from "react-router-dom";
-// import { Grid, Nav, NavItem } from 'react-bootstrap';
 import { div, i, h5 } from 'react-bootstrap';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import '../node_modules/font-awesome/css/font-awesome.min.css';
 import "./Footer.css";
 
-function Footer(/*props*/) {
+function Footer() {
   return (
     <footer className="navbar-dark  bg-dark" id="footerSection">
       <div className="container">

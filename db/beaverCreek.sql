@@ -1,11 +1,11 @@
--- Drops the todolist if it exists currently --
+-- Drops the database if it exists currently --
 DROP DATABASE IF EXISTS beaverCreekdb;
--- Creates the "todolist" database --
+-- Creates the "beaverCreek" database --
 CREATE DATABASE beaverCreekdb;
 
 use beaverCreekdb;
 
-
+-- Creates the "TeeTimes" table --
 CREATE TABLE IF NOT EXISTS TeeTimes (
     id INT AUTO_INCREMENT,
     createdAt DATETIME,
@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS TeeTimes (
 	PRIMARY KEY (id)
 );
 
-
+-- Creates the "Users" table --
 CREATE TABLE IF NOT EXISTS Users (
     id INT AUTO_INCREMENT,
     createdAt DATETIME,
@@ -33,12 +33,10 @@ CREATE TABLE IF NOT EXISTS Users (
 	PRIMARY KEY (id)
 );
 
+-- Sets default password for database access --
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 
--- use beaverCreekdb;
-
--- SELECT * FROM TeeTimes;
-
+-- Allows visual on database entries in MySQL Workbench, if desired --
 use beaverCreekdb;
 
 SELECT * FROM Users;
