@@ -1,8 +1,14 @@
+// Importing the axios dependency
 import axios from 'axios';
+// Creating an instance using the config defaults provided by the library
+// At this point the timeout config value is `0` as is the default for the library
 const instance = axios.create();
 
+//Intercepting requests or responses
 instance.interceptors.request.use(function (request) {
+  // Creating an authToken variable that stores the JSON token in session storage. It will be removed when the session is ended.
   var authToken = sessionStorage.jwt
+  // If there is an authToken, send the access token in the Authorization request header field (which is defined by HTTP/1.1). The client uses the Bearer authentication scheme to transmit the access token.
   if (authToken) {
     if (request.headers && !request.headers.Authorization) {
       request.headers['Authorization'] = `Bearer ${authToken}`
@@ -12,12 +18,5 @@ instance.interceptors.request.use(function (request) {
   return request
 })
 
+// Exporting our instance as the default.
 export default instance
-
-
-
-
-// Passport operates on server as a gatekeeper. When you login it fiters out who is a real user or not. For any other protected route it will do the same thing.
-// Implemented JSON web token, which is an ID that can be used in leiu of user name and password each time.
-// When you login with the correct credientials, you are sent a token instead of cookies after credientials are validated.
-// Passport sends react a token that we are storing in session storage (outside of the react ecosystem). When you log out, the token is deleted from session storage.
