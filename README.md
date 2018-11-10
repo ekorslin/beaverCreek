@@ -9,6 +9,7 @@ This app is a prototype for an alternative to the course's current site.  Upgrad
 
 #### Demo:
 https://gfycat.com/SpicyEvilGourami
+https://thumbs.gfycat.com/SpicyEvilGourami-size_restricted.gif
 
 #### Running the Application Locally
 
