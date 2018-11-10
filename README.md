@@ -7,6 +7,9 @@ This app is a prototype for an alternative to the course's current site.  Upgrad
 #### View the Heroku-deployed Site:
 [Visit Site](https://morning-coast-79159.herokuapp.com/)
 
+#### Demo:
+<a href="https://thumbs.gfycat.com/SpicyEvilGourami-size_restricted.gif"><img src="https://thumbs.gfycat.com/SpicyEvilGourami-size_restricted.gif" title="made at gfycat.com"/></a>
+
 #### Running the Application Locally
 
 If desired, visitors are welcome to pull repository files and run locally.  Start by installing front- and back-end dependencies. While in this directory, run the following command:
