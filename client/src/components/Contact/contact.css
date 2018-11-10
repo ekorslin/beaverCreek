@@ -1,3 +1,5 @@
+/* header & image styling */
+
 h2 {
   font-family: 'Josefin Sans', sans-serif;
   text-shadow: 2px 2px 8px black;
@@ -84,43 +86,6 @@ h2 {
 .corner-ribbon.orange{background: #e82;}
 .corner-ribbon.yellow{background: #ec0;}
 
-
-
-/* .form {
-  margin: 20px;
-}
-
-.form input {
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 100%;
-}
-
-h2 {
-  color: black;
-}
-
-img {
-  width: 75%;
-  height: 75%;
-}
-
-h2 {
-  padding-top:10%;
-  margin-top:10%;
-  border-top:10%;
-} */
-
-/* #carouselExampleIndicators {
-    width: 100%;
-}
-.carousel-item img {
-    height: 100%;
-    width: auto;
-    max-width: none;
-} */
-
 form.contactUs,
 form.contactForm {
   margin-top: 50px;
@@ -133,9 +98,3 @@ form.contactForm {
   background-repeat: no-repeat;
   position: static !important;
 }
-
-
-
-/* .carousel-item {
-   background-image: url('../../assets/put.jpg');
-} */

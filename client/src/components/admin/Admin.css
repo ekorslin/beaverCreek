@@ -1,13 +1,16 @@
+/* spaces between form inputs to allow for a more aesthitcally pleasing admin login screen */
 form.signup,
 form.login {
   margin-top: 50px;
 }
 
+/* more page spacing options for entire form */
 .adminGrouping {
   padding-top: 10%;
   padding-bottom: 75px;
 }
 
+/* Includes background image and formatting for login page */
 .wrapper {
   background-image: url('../../assets/put.jpg');
   background-size: cover;
